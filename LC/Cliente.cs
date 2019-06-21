@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-
+// gian cara de teta
 namespace LC
 {
     public class Cliente
