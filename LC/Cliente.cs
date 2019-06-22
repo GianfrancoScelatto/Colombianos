@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 
 namespace LC
-{
+{ //prueba de commit
     public class Cliente
     {
         public int ID { get; set; }
