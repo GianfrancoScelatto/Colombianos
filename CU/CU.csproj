@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formulario.cs">
+    <Compile Include="FrmAbm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario.Designer.cs">
-      <DependentUpon>Formulario.cs</DependentUpon>
+    <Compile Include="FrmAbm.Designer.cs">
+      <DependentUpon>FrmAbm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formulario.resx">
-      <DependentUpon>Formulario.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAbm.resx">
+      <DependentUpon>FrmAbm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -10,23 +10,20 @@ using LC;
 
 namespace CU
 {
-    public partial class Formulario : Form
+    public partial class FrmAbm : Form
     {
-        public Connect conn;
         public Cliente cliente;
         public Ciudad ciudad;
-        public Menu menu;
-        public int _dni;
-        public Formulario(int dni)
+        public bool bandera=false;
+        int _dni = 0;
+        public FrmAbm(int dni)
         {
             _dni = dni;
-            conn = new Connect();
             cliente = new Cliente();
             ciudad = new Ciudad();
-            menu = new Menu();
             InitializeComponent();
-            Combo.Combo2campos(CBOCiudad, "NombreCiudad", "CodigoCiudad", "BaseCiudades");
-
+            Combo.Combo2campos(CBOCiudad, "NombreCiudad", "CodigoCiudad", "BaseCiudades");    
+            
             if (_dni == null)
             {
 
@@ -37,20 +34,19 @@ namespace CU
 
                 foreach (var x in Registro)
                 {
-                    ID.Text = Convert.ToInt32(x.ID.ToString()).ToString();
                     Documento.Text = Convert.ToInt32(x.Documento.ToString()).ToString();
                     Nombre.Text = x.Nombre;
 
-                    if (x.Sexo == "Masculino")
+                    if ((rbtnM.Checked) == true)
                     {
-                        rbtnM.Checked = true;
+                        cliente.Sexo = "Masculino";
                     }
-                    else rbtnF.Checked = true;
-
-                    Fecha.Text = x.FechaNacimiento.ToString();
+                    else cliente.Sexo = "Femenino";
+                    
+                    Fecha.Text = x.FechaNacimiento.ToString("MM-dd-yyyy");
                     Correo.Text = x.Correo;
                     Address.Text = x.Direccion;
-                    CBOCiudad.Text = x.ciudad.NombreCiudad.ToString();
+                    CBOCiudad.Text = x.ciudad.NombreCiudad;
                 }
             }
         }
@@ -59,11 +55,15 @@ namespace CU
         {
            
         }
-
         
-        private void Crear_Click(object sender, EventArgs e)
+        private void btnAccion_Click(object sender, EventArgs e)
         {
-            conn.Abrir();
+            if (Nombre.Text=="" || Correo.Text=="" || Direccion.Text=="" || Documento.Text == "")
+            {
+                MessageBox.Show("Completa todo amigo");
+                return;
+            }
+
             cliente.Documento = Convert.ToInt32(Documento.Text);
             cliente.Nombre = Nombre.Text;
 
@@ -79,6 +79,7 @@ namespace CU
             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
             cliente.Accion(cliente, "ALTA");
             MessageBox.Show("¡Cliente nuevo ingresado con éxito!");
+
         }
 
         private void PbMinimizar_Click(object sender, EventArgs e)
@@ -86,19 +87,19 @@ namespace CU
             WindowState = FormWindowState.Minimized;
         }
 
-        private void BunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void PbCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
-        private void Actualizar_Click_1(object sender, EventArgs e)
+       /* private void Actualizar_Click_1(object sender, EventArgs e)
         {
-            conn.Abrir();
+            //  conn.Abrir();
+            if (Nombre.Text == "" || Correo.Text == "" || Direccion.text == "" || Documento.Text == "")
+            {
+                MessageBox.Show("Completa todo amigo");
+                return;
+            }
 
             cliente.ID = Convert.ToInt32(ID.Text);
             cliente.Documento = Convert.ToInt32(Documento.Text);
@@ -120,6 +121,9 @@ namespace CU
                 cliente.Accion(cliente, "UPDATE");
                 MessageBox.Show("El cliente ha sido actualizado exitosamente");
             }
-        }
+
+            bandera = true;
+            this.Hide();
+        }*/
     }
 }

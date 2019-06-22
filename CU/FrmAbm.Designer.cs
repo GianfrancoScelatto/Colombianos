@@ -1,6 +1,6 @@
 ﻿namespace CU
 {
-    partial class Formulario
+    partial class FrmAbm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formulario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.rbtnF = new System.Windows.Forms.RadioButton();
+            this.rbtnM = new System.Windows.Forms.RadioButton();
             this.Fecha = new System.Windows.Forms.DateTimePicker();
             this.Address = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.Correo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -42,7 +44,7 @@
             this.Documento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.ID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Crear = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAccion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Direccion = new Bunifu.Framework.UI.BunifuTextbox();
             this.CBOCiudad = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -53,9 +55,6 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Actualizar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.rbtnM = new System.Windows.Forms.RadioButton();
-            this.rbtnF = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -136,7 +135,7 @@
             this.bunifuGradientPanel1.Controls.Add(this.Documento);
             this.bunifuGradientPanel1.Controls.Add(this.ID);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel9);
-            this.bunifuGradientPanel1.Controls.Add(this.Crear);
+            this.bunifuGradientPanel1.Controls.Add(this.btnAccion);
             this.bunifuGradientPanel1.Controls.Add(this.Direccion);
             this.bunifuGradientPanel1.Controls.Add(this.CBOCiudad);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel8);
@@ -147,7 +146,6 @@
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel3);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel2);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
-            this.bunifuGradientPanel1.Controls.Add(this.Actualizar);
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
@@ -157,6 +155,32 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(480, 555);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // rbtnF
+            // 
+            this.rbtnF.AutoSize = true;
+            this.rbtnF.BackColor = System.Drawing.Color.Transparent;
+            this.rbtnF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.rbtnF.Location = new System.Drawing.Point(326, 213);
+            this.rbtnF.Name = "rbtnF";
+            this.rbtnF.Size = new System.Drawing.Size(105, 23);
+            this.rbtnF.TabIndex = 35;
+            this.rbtnF.Text = "Femenino";
+            this.rbtnF.UseVisualStyleBackColor = false;
+            // 
+            // rbtnM
+            // 
+            this.rbtnM.AutoSize = true;
+            this.rbtnM.BackColor = System.Drawing.Color.Transparent;
+            this.rbtnM.Checked = true;
+            this.rbtnM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.rbtnM.Location = new System.Drawing.Point(199, 213);
+            this.rbtnM.Name = "rbtnM";
+            this.rbtnM.Size = new System.Drawing.Size(106, 23);
+            this.rbtnM.TabIndex = 34;
+            this.rbtnM.TabStop = true;
+            this.rbtnM.Text = "Masculino";
+            this.rbtnM.UseVisualStyleBackColor = false;
             // 
             // Fecha
             // 
@@ -276,40 +300,40 @@
             this.bunifuCustomLabel9.TabIndex = 26;
             this.bunifuCustomLabel9.Text = "nacimiento";
             // 
-            // Crear
+            // btnAccion
             // 
-            this.Crear.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.Crear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.Crear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Crear.BorderRadius = 0;
-            this.Crear.ButtonText = "Crear";
-            this.Crear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Crear.DisabledColor = System.Drawing.Color.Gray;
-            this.Crear.Iconcolor = System.Drawing.Color.Transparent;
-            this.Crear.Iconimage = ((System.Drawing.Image)(resources.GetObject("Crear.Iconimage")));
-            this.Crear.Iconimage_right = null;
-            this.Crear.Iconimage_right_Selected = null;
-            this.Crear.Iconimage_Selected = null;
-            this.Crear.IconMarginLeft = 0;
-            this.Crear.IconMarginRight = 0;
-            this.Crear.IconRightVisible = true;
-            this.Crear.IconRightZoom = 0D;
-            this.Crear.IconVisible = true;
-            this.Crear.IconZoom = 90D;
-            this.Crear.IsTab = false;
-            this.Crear.Location = new System.Drawing.Point(176, 505);
-            this.Crear.Name = "Crear";
-            this.Crear.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.Crear.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.Crear.OnHoverTextColor = System.Drawing.Color.White;
-            this.Crear.selected = false;
-            this.Crear.Size = new System.Drawing.Size(117, 29);
-            this.Crear.TabIndex = 21;
-            this.Crear.Text = "Crear";
-            this.Crear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Crear.Textcolor = System.Drawing.Color.White;
-            this.Crear.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Crear.Click += new System.EventHandler(this.Crear_Click);
+            this.btnAccion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAccion.BorderRadius = 0;
+            this.btnAccion.ButtonText = "Crear";
+            this.btnAccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAccion.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAccion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAccion.Iconimage")));
+            this.btnAccion.Iconimage_right = null;
+            this.btnAccion.Iconimage_right_Selected = null;
+            this.btnAccion.Iconimage_Selected = null;
+            this.btnAccion.IconMarginLeft = 0;
+            this.btnAccion.IconMarginRight = 0;
+            this.btnAccion.IconRightVisible = true;
+            this.btnAccion.IconRightZoom = 0D;
+            this.btnAccion.IconVisible = true;
+            this.btnAccion.IconZoom = 90D;
+            this.btnAccion.IsTab = false;
+            this.btnAccion.Location = new System.Drawing.Point(337, 504);
+            this.btnAccion.Name = "btnAccion";
+            this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnAccion.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAccion.selected = false;
+            this.btnAccion.Size = new System.Drawing.Size(117, 29);
+            this.btnAccion.TabIndex = 21;
+            this.btnAccion.Text = "Crear";
+            this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccion.Textcolor = System.Drawing.Color.White;
+            this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         //   this.btnAccion.Click += new System.EventHandler(this.Crear_Click);
             // 
             // Direccion
             // 
@@ -328,6 +352,7 @@
             // CBOCiudad
             // 
             this.CBOCiudad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.CBOCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOCiudad.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.CBOCiudad.ForeColor = System.Drawing.Color.White;
             this.CBOCiudad.FormattingEnabled = true;
@@ -425,68 +450,7 @@
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "ID";
             // 
-            // Actualizar
-            // 
-            this.Actualizar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.Actualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Actualizar.BorderRadius = 0;
-            this.Actualizar.ButtonText = "Actualizar";
-            this.Actualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Actualizar.DisabledColor = System.Drawing.Color.Gray;
-            this.Actualizar.Iconcolor = System.Drawing.Color.Transparent;
-            this.Actualizar.Iconimage = ((System.Drawing.Image)(resources.GetObject("Actualizar.Iconimage")));
-            this.Actualizar.Iconimage_right = null;
-            this.Actualizar.Iconimage_right_Selected = null;
-            this.Actualizar.Iconimage_Selected = null;
-            this.Actualizar.IconMarginLeft = 0;
-            this.Actualizar.IconMarginRight = 0;
-            this.Actualizar.IconRightVisible = true;
-            this.Actualizar.IconRightZoom = 0D;
-            this.Actualizar.IconVisible = true;
-            this.Actualizar.IconZoom = 90D;
-            this.Actualizar.IsTab = false;
-            this.Actualizar.Location = new System.Drawing.Point(337, 505);
-            this.Actualizar.Name = "Actualizar";
-            this.Actualizar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.Actualizar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.Actualizar.OnHoverTextColor = System.Drawing.Color.White;
-            this.Actualizar.selected = false;
-            this.Actualizar.Size = new System.Drawing.Size(117, 29);
-            this.Actualizar.TabIndex = 33;
-            this.Actualizar.Text = "Actualizar";
-            this.Actualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Actualizar.Textcolor = System.Drawing.Color.White;
-            this.Actualizar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Actualizar.Click += new System.EventHandler(this.Actualizar_Click_1);
-            // 
-            // rbtnM
-            // 
-            this.rbtnM.AutoSize = true;
-            this.rbtnM.BackColor = System.Drawing.Color.Transparent;
-            this.rbtnM.Checked = true;
-            this.rbtnM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.rbtnM.Location = new System.Drawing.Point(199, 213);
-            this.rbtnM.Name = "rbtnM";
-            this.rbtnM.Size = new System.Drawing.Size(106, 23);
-            this.rbtnM.TabIndex = 34;
-            this.rbtnM.TabStop = true;
-            this.rbtnM.Text = "Masculino";
-            this.rbtnM.UseVisualStyleBackColor = false;
-            // 
-            // rbtnF
-            // 
-            this.rbtnF.AutoSize = true;
-            this.rbtnF.BackColor = System.Drawing.Color.Transparent;
-            this.rbtnF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.rbtnF.Location = new System.Drawing.Point(326, 213);
-            this.rbtnF.Name = "rbtnF";
-            this.rbtnF.Size = new System.Drawing.Size(105, 23);
-            this.rbtnF.TabIndex = 35;
-            this.rbtnF.Text = "Femenino";
-            this.rbtnF.UseVisualStyleBackColor = false;
-            // 
-            // Formulario
+            // FrmAbm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -494,7 +458,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Formulario";
+            this.Name = "FrmAbm";
             this.Text = "Formulario";
             this.Load += new System.EventHandler(this.Formulario_Load);
             this.panel1.ResumeLayout(false);
@@ -525,7 +489,7 @@
         public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         public System.Windows.Forms.ComboBox CBOCiudad;
-        public Bunifu.Framework.UI.BunifuFlatButton Crear;
+        public Bunifu.Framework.UI.BunifuFlatButton btnAccion;
         public Bunifu.Framework.UI.BunifuMaterialTextbox ID;
         public Bunifu.Framework.UI.BunifuMaterialTextbox Address;
         public Bunifu.Framework.UI.BunifuMaterialTextbox Correo;
@@ -533,7 +497,6 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox Documento;
         public System.Windows.Forms.DateTimePicker Fecha;
         private System.Windows.Forms.PictureBox pbCerrar;
-        public Bunifu.Framework.UI.BunifuFlatButton Actualizar;
         public System.Windows.Forms.RadioButton rbtnF;
         public System.Windows.Forms.RadioButton rbtnM;
     }
