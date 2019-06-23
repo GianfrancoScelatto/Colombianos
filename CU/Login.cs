@@ -14,7 +14,7 @@ namespace CU
     public partial class Login : Form
         
     {
-        public ClaseLogin claseL;
+        public Usuario claseL;
         public Menu MenuL;
         int intentos;
         string datos;
@@ -34,7 +34,7 @@ namespace CU
             intentos+= 1;
             
 
-            if (txtuser.Text == claseL.mail && textBox2.Text == claseL.contraseña)
+            if (txtuser.Text == claseL.Mail && textBox2.Text == claseL.Contraseña)
             {
                 
                 this.Hide();
