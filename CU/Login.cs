@@ -55,13 +55,7 @@ namespace CU
             }
 
         }
-
-        private void TextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
+ 
     }
     
     
