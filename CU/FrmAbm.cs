@@ -92,38 +92,48 @@ namespace CU
             this.Hide();
         }
 
-       /* private void Actualizar_Click_1(object sender, EventArgs e)
+        private void BunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
-            //  conn.Abrir();
-            if (Nombre.Text == "" || Correo.Text == "" || Direccion.text == "" || Documento.Text == "")
-            {
-                MessageBox.Show("Completa todo amigo");
-                return;
-            }
 
-            cliente.ID = Convert.ToInt32(ID.Text);
-            cliente.Documento = Convert.ToInt32(Documento.Text);
-            cliente.Nombre = Nombre.Text;
+        }
 
-            if ((rbtnM.Checked) == true)
-            {
-                cliente.Sexo = "Masculino";
-            }
-            else cliente.Sexo = "Femenino";
+        private void BtnAccion_Click_1(object sender, EventArgs e)
+        {
 
-            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
-            cliente.Correo = Correo.Text;
-            cliente.Direccion = Address.Text;
-            cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
+        }
 
-            if (MessageBox.Show("¿Actualizar este cliente?", "Actualizar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                cliente.Accion(cliente, "UPDATE");
-                MessageBox.Show("El cliente ha sido actualizado exitosamente");
-            }
+        /* private void Actualizar_Click_1(object sender, EventArgs e)
+         {
+             //  conn.Abrir();
+             if (Nombre.Text == "" || Correo.Text == "" || Direccion.text == "" || Documento.Text == "")
+             {
+                 MessageBox.Show("Completa todo amigo");
+                 return;
+             }
 
-            bandera = true;
-            this.Hide();
-        }*/
+             cliente.ID = Convert.ToInt32(ID.Text);
+             cliente.Documento = Convert.ToInt32(Documento.Text);
+             cliente.Nombre = Nombre.Text;
+
+             if ((rbtnM.Checked) == true)
+             {
+                 cliente.Sexo = "Masculino";
+             }
+             else cliente.Sexo = "Femenino";
+
+             cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
+             cliente.Correo = Correo.Text;
+             cliente.Direccion = Address.Text;
+             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
+
+             if (MessageBox.Show("¿Actualizar este cliente?", "Actualizar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+             {
+                 cliente.Accion(cliente, "UPDATE");
+                 MessageBox.Show("El cliente ha sido actualizado exitosamente");
+             }
+
+             bandera = true;
+             this.Hide();
+         }*/
     }
 }

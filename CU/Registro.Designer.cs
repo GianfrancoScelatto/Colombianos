@@ -66,6 +66,7 @@
             this.bttnAceptar.TabIndex = 2;
             this.bttnAceptar.Text = "Aceptar";
             this.bttnAceptar.UseVisualStyleBackColor = true;
+            this.bttnAceptar.Click += new System.EventHandler(this.BttnAceptar_Click);
             // 
             // txtRegistroContraseña
             // 
@@ -170,6 +171,7 @@
             this.Controls.Add(this.txtRegistroEmail);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,21 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using LC;
+using System.Data.SqlClient;
 
 namespace CU
 {
-  
+
     public partial class Login : Form
-        
+
     {
-        public ClaseLogin claseL;
+        public Usuario user;
         public Menu MenuL;
         int intentos;
-        string datos;
+        public Registro registro;
+        public Connect conn;
+        
+
 
         public Login()
         {
+            user = new Usuario();
+            conn = new Connect();
             InitializeComponent();
+
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -31,10 +38,26 @@ namespace CU
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            intentos+= 1;
-            
+            conn.Abrir();
+            intentos += 0;
 
-            if (txtuser.Text == claseL.mail && textBox2.Text == claseL.contraseña)
+            var conexion = new SqlConnection();
+            var comando = new SqlCommand();
+            var comando1 = new SqlCommand();
+            var comando2 = new SqlCommand();
+            var BaseDeDatos = new Connect();
+            conexion = BaseDeDatos.Abrir();
+            comando.Connection = conexion;
+            comando1.Connection = conexion;
+            comando2.Connection = conexion;
+            comando.CommandText = "Select nickname FROM Cuenta";
+            comando1.CommandText = "Select email FROM Cuenta";
+            comando2.CommandText = "Select contraseña FROM Cuenta";
+            user.Nick = comando.ExecuteScalar().ToString();
+            user.Mail = comando1.ExecuteScalar().ToString();
+            user.Contraseña = comando2.ExecuteScalar().ToString();
+
+            if (user.Mail == txtuser.Text  || user.Nick == txtuser.Text && user.Contraseña == txtcontra.Text)
             {
                 
                 this.Hide();
@@ -50,17 +73,18 @@ namespace CU
             {
                 intentos += 1;
                 MessageBox.Show("Error de autenticacion, verifique usuario y/O contraseña ó es posible que su cuenta este inhabilitada", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                textBox2.Text = "";
+                txtcontra.Text = "";
 
             }
 
         }
 
-        private void TextBox3_TextChanged(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
+            registro = new Registro();
+            registro.Show();
 
         }
     }
-    
     
 }

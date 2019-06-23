@@ -114,5 +114,10 @@ namespace CU
         {
             CargarGrilla();
         }
+
+        private void Grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

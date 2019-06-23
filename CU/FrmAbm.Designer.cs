@@ -155,6 +155,7 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(480, 555);
             this.bunifuGradientPanel1.TabIndex = 0;
+            this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.BunifuGradientPanel1_Paint);
             // 
             // rbtnF
             // 
@@ -333,7 +334,7 @@
             this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccion.Textcolor = System.Drawing.Color.White;
             this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         //   this.btnAccion.Click += new System.EventHandler(this.Crear_Click);
+            this.btnAccion.Click += new System.EventHandler(this.BtnAccion_Click_1);
             // 
             // Direccion
             // 

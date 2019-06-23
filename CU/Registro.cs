@@ -20,5 +20,15 @@ namespace CU
         {
 
         }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BttnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
