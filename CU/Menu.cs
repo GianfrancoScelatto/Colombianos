@@ -21,8 +21,7 @@ namespace CU
         public int dni;
         public Menu()
         {
-            cliente = new Cliente()
-                formulario = new FrmAbm();
+            cliente = new Cliente();
             InitializeComponent();
         }
 
