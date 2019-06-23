@@ -21,7 +21,8 @@ namespace CU
         public int dni;
         public Menu()
         {
-            cliente = new Cliente();
+            cliente = new Cliente()
+                formulario = new FrmAbm();
             InitializeComponent();
         }
 
@@ -69,7 +70,7 @@ namespace CU
 
         private void BunifuFlatButton2_Click(object sender, EventArgs e)
         { 
-            formulario.Show(null);          
+            formulario.Show();          
         }
 
         private void BunifuFlatButton4_Click(object sender, EventArgs e)

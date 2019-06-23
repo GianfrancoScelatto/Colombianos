@@ -35,13 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnregistro = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnLog = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtcontra = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtuser = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -111,8 +111,8 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton2);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton1);
+            this.bunifuGradientPanel1.Controls.Add(this.btnregistro);
+            this.bunifuGradientPanel1.Controls.Add(this.btnLog);
             this.bunifuGradientPanel1.Controls.Add(this.txtcontra);
             this.bunifuGradientPanel1.Controls.Add(this.txtuser);
             this.bunifuGradientPanel1.Controls.Add(this.label4);
@@ -128,6 +128,76 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(402, 343);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // btnregistro
+            // 
+            this.btnregistro.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnregistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnregistro.BorderRadius = 0;
+            this.btnregistro.ButtonText = "Registrarse";
+            this.btnregistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnregistro.DisabledColor = System.Drawing.Color.Gray;
+            this.btnregistro.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnregistro.Iconimage = null;
+            this.btnregistro.Iconimage_right = null;
+            this.btnregistro.Iconimage_right_Selected = null;
+            this.btnregistro.Iconimage_Selected = null;
+            this.btnregistro.IconMarginLeft = 0;
+            this.btnregistro.IconMarginRight = 0;
+            this.btnregistro.IconRightVisible = true;
+            this.btnregistro.IconRightZoom = 0D;
+            this.btnregistro.IconVisible = true;
+            this.btnregistro.IconZoom = 90D;
+            this.btnregistro.IsTab = false;
+            this.btnregistro.Location = new System.Drawing.Point(33, 255);
+            this.btnregistro.Name = "btnregistro";
+            this.btnregistro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnregistro.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnregistro.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnregistro.selected = false;
+            this.btnregistro.Size = new System.Drawing.Size(92, 48);
+            this.btnregistro.TabIndex = 29;
+            this.btnregistro.Text = "Registrarse";
+            this.btnregistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnregistro.Textcolor = System.Drawing.Color.White;
+            this.btnregistro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregistro.Click += new System.EventHandler(this.BunifuFlatButton2_Click);
+            // 
+            // btnLog
+            // 
+            this.btnLog.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLog.BorderRadius = 0;
+            this.btnLog.ButtonText = "Ingresar";
+            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLog.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLog.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLog.Iconimage = null;
+            this.btnLog.Iconimage_right = null;
+            this.btnLog.Iconimage_right_Selected = null;
+            this.btnLog.Iconimage_Selected = null;
+            this.btnLog.IconMarginLeft = 0;
+            this.btnLog.IconMarginRight = 0;
+            this.btnLog.IconRightVisible = true;
+            this.btnLog.IconRightZoom = 0D;
+            this.btnLog.IconVisible = true;
+            this.btnLog.IconZoom = 90D;
+            this.btnLog.IsTab = false;
+            this.btnLog.Location = new System.Drawing.Point(282, 255);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnLog.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLog.selected = false;
+            this.btnLog.Size = new System.Drawing.Size(92, 48);
+            this.btnLog.TabIndex = 28;
+            this.btnLog.Text = "Ingresar";
+            this.btnLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLog.Textcolor = System.Drawing.Color.White;
+            this.btnLog.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLog.Click += new System.EventHandler(this.BtnLog_Click_1);
             // 
             // txtcontra
             // 
@@ -203,74 +273,6 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Contraseña";
             // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Ingresar";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(282, 255);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(92, 48);
-            this.bunifuFlatButton1.TabIndex = 28;
-            this.bunifuFlatButton1.Text = "Ingresar";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "Registrarse";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = null;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 90D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(33, 255);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(92, 48);
-            this.bunifuFlatButton2.TabIndex = 29;
-            this.bunifuFlatButton2.Text = "Registrarse";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,7 +309,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnregistro;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLog;
     }
 }
