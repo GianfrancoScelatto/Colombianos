@@ -22,6 +22,7 @@ namespace CU
         public Menu()
         {
             cliente = new Cliente();
+
             InitializeComponent();
         }
 
@@ -68,8 +69,8 @@ namespace CU
         }
 
         private void BunifuFlatButton2_Click(object sender, EventArgs e)
-        { 
-            formulario.Show();          
+        {
+            formulario.Show();
         }
 
         private void BunifuFlatButton4_Click(object sender, EventArgs e)

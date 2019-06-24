@@ -20,6 +20,7 @@ namespace CU
         int intentos;
         public Registro registro;
         public Connect conn;
+        public RecuperarContraseña RContrasena;
 
 
 
@@ -83,10 +84,16 @@ namespace CU
             registro.Show();
         }
 
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+          
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RContrasena = new RecuperarContraseña();
+            RContrasena.Show();
+        }
     }
 }
- 
-    
-    
-    
 
