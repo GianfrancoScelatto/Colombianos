@@ -35,13 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnregistro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLog = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtcontra = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtuser = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRegistro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -111,7 +111,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.btnregistro);
+            this.bunifuGradientPanel1.Controls.Add(this.btnRegistro);
             this.bunifuGradientPanel1.Controls.Add(this.btnLog);
             this.bunifuGradientPanel1.Controls.Add(this.txtcontra);
             this.bunifuGradientPanel1.Controls.Add(this.txtuser);
@@ -128,41 +128,6 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(402, 343);
             this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // btnregistro
-            // 
-            this.btnregistro.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnregistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnregistro.BorderRadius = 0;
-            this.btnregistro.ButtonText = "Registrarse";
-            this.btnregistro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnregistro.DisabledColor = System.Drawing.Color.Gray;
-            this.btnregistro.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnregistro.Iconimage = null;
-            this.btnregistro.Iconimage_right = null;
-            this.btnregistro.Iconimage_right_Selected = null;
-            this.btnregistro.Iconimage_Selected = null;
-            this.btnregistro.IconMarginLeft = 0;
-            this.btnregistro.IconMarginRight = 0;
-            this.btnregistro.IconRightVisible = true;
-            this.btnregistro.IconRightZoom = 0D;
-            this.btnregistro.IconVisible = true;
-            this.btnregistro.IconZoom = 90D;
-            this.btnregistro.IsTab = false;
-            this.btnregistro.Location = new System.Drawing.Point(33, 255);
-            this.btnregistro.Name = "btnregistro";
-            this.btnregistro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnregistro.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnregistro.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnregistro.selected = false;
-            this.btnregistro.Size = new System.Drawing.Size(92, 48);
-            this.btnregistro.TabIndex = 29;
-            this.btnregistro.Text = "Registrarse";
-            this.btnregistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnregistro.Textcolor = System.Drawing.Color.White;
-            this.btnregistro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistro.Click += new System.EventHandler(this.BunifuFlatButton2_Click);
             // 
             // btnLog
             // 
@@ -185,13 +150,13 @@
             this.btnLog.IconVisible = true;
             this.btnLog.IconZoom = 90D;
             this.btnLog.IsTab = false;
-            this.btnLog.Location = new System.Drawing.Point(282, 255);
+            this.btnLog.Location = new System.Drawing.Point(233, 249);
             this.btnLog.Name = "btnLog";
             this.btnLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnLog.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLog.selected = false;
-            this.btnLog.Size = new System.Drawing.Size(92, 48);
+            this.btnLog.Size = new System.Drawing.Size(107, 48);
             this.btnLog.TabIndex = 28;
             this.btnLog.Text = "Ingresar";
             this.btnLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -255,10 +220,11 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.DisabledLinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(155, 162);
+            this.linkLabel1.Location = new System.Drawing.Point(138, 174);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(119, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(148, 17);
             this.linkLabel1.TabIndex = 22;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Olvido su contraseña?";
@@ -268,11 +234,47 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(39, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 21;
             this.label3.Text = "Contraseña";
+            // 
+            // btnRegistro
+            // 
+            this.btnRegistro.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegistro.BorderRadius = 0;
+            this.btnRegistro.ButtonText = "Registrarse";
+            this.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistro.DisabledColor = System.Drawing.Color.Gray;
+            this.btnRegistro.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnRegistro.Iconimage = null;
+            this.btnRegistro.Iconimage_right = null;
+            this.btnRegistro.Iconimage_right_Selected = null;
+            this.btnRegistro.Iconimage_Selected = null;
+            this.btnRegistro.IconMarginLeft = 0;
+            this.btnRegistro.IconMarginRight = 0;
+            this.btnRegistro.IconRightVisible = true;
+            this.btnRegistro.IconRightZoom = 0D;
+            this.btnRegistro.IconVisible = true;
+            this.btnRegistro.IconZoom = 90D;
+            this.btnRegistro.IsTab = false;
+            this.btnRegistro.Location = new System.Drawing.Point(57, 249);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnRegistro.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnRegistro.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnRegistro.selected = false;
+            this.btnRegistro.Size = new System.Drawing.Size(107, 48);
+            this.btnRegistro.TabIndex = 29;
+            this.btnRegistro.Text = "Registrarse";
+            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRegistro.Textcolor = System.Drawing.Color.White;
+            this.btnRegistro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.Click += new System.EventHandler(this.BtnRegistro_Click);
             // 
             // Login
             // 
@@ -310,7 +312,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuFlatButton btnregistro;
         private Bunifu.Framework.UI.BunifuFlatButton btnLog;
+        private Bunifu.Framework.UI.BunifuFlatButton btnRegistro;
     }
 }

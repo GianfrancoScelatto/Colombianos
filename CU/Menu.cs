@@ -69,26 +69,6 @@ namespace CU
             WindowState = FormWindowState.Minimized;
         }
 
-        private void BunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            formulario.Show();
-        }
-
-        private void BunifuFlatButton4_Click(object sender, EventArgs e)
-        {
-            cliente.Documento = Convert.ToInt32(Grilla.CurrentRow.Cells["Documento"].Value);
-            if (MessageBox.Show("¿Está seguro de eliminar este cliente?", "Borrar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                cliente.Accion(cliente, "BAJA");
-                MessageBox.Show("El cliente ha sido borrado exitosamente");
-            }
-
-            if (Grilla.CurrentRow == null)
-                return;
-
-            Grilla.Rows.Remove(Grilla.CurrentRow);
-        }
-
         private void Buscar_TextChanged(object sender, EventArgs e)
         {
             CargarGrilla();
@@ -109,7 +89,35 @@ namespace CU
             dni = cliente.Documento;
             formulario = new FrmAbm(dni);
             formulario.Show();
+            formulario.bandera = true;
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            formulario = new FrmAbm(dni);
+            formulario.Documento.ResetText();
+            formulario.Nombre.ResetText();
+            formulario.rbtnM.Checked = true;
+            formulario.Fecha.Value = DateTime.Now;
+            formulario.Correo.ResetText();
+            formulario.Address.ResetText();
+            formulario.Show();
+            
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            cliente.Documento = Convert.ToInt32(Grilla.CurrentRow.Cells["Documento"].Value);
+            if (MessageBox.Show("¿Está seguro de eliminar este cliente?", "Borrar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                cliente.Accion(cliente, "BAJA");
+                MessageBox.Show("El cliente ha sido borrado exitosamente");
+            }
+
+            if (Grilla.CurrentRow == null)
+                return;
+
+            Grilla.Rows.Remove(Grilla.CurrentRow);
+        }
     }
 }

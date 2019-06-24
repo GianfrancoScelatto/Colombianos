@@ -664,7 +664,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuFlatButton4.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBorrar.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAW4AAAIACAYAAACitIY4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAz
         ugAAM7oB8LiEgwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABBwSURBVHhe7d1f
@@ -741,7 +741,7 @@
         zSWnpHpEGwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuFlatButton2.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnNuevo.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAO2hJREFUeF7t
         3Qf0FOW9h3HpCCqCIiC2WEARbNiIUTG2C7HGigLGHhUj1oiiiFE0VgTF3luMitcS0SgWlNh7AwtYwQ5I

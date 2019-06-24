@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnActualizar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnBorrar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnNuevo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -81,8 +81,8 @@
             this.Sidebar.Controls.Add(this.bunifuGradientPanel1);
             this.Sidebar.Controls.Add(this.pictureBox1);
             this.Sidebar.Controls.Add(this.bunifuFlatButton5);
-            this.Sidebar.Controls.Add(this.bunifuFlatButton4);
-            this.Sidebar.Controls.Add(this.bunifuFlatButton2);
+            this.Sidebar.Controls.Add(this.btnBorrar);
+            this.Sidebar.Controls.Add(this.btnNuevo);
             this.Sidebar.Controls.Add(this.LineaSidebar);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Sidebar.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
@@ -190,75 +190,75 @@
             this.bunifuFlatButton5.Textcolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             // 
-            // bunifuFlatButton4
+            // btnBorrar
             // 
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "               BORRAR";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 0;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 50D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(9, 230);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(252, 51);
-            this.bunifuFlatButton4.TabIndex = 11;
-            this.bunifuFlatButton4.Text = "               BORRAR";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.LightGray;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bunifuFlatButton4.Click += new System.EventHandler(this.BunifuFlatButton4_Click);
+            this.btnBorrar.Activecolor = System.Drawing.Color.Transparent;
+            this.btnBorrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBorrar.BorderRadius = 0;
+            this.btnBorrar.ButtonText = "               BORRAR";
+            this.btnBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBorrar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnBorrar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Iconimage")));
+            this.btnBorrar.Iconimage_right = null;
+            this.btnBorrar.Iconimage_right_Selected = null;
+            this.btnBorrar.Iconimage_Selected = null;
+            this.btnBorrar.IconMarginLeft = 0;
+            this.btnBorrar.IconMarginRight = 0;
+            this.btnBorrar.IconRightVisible = true;
+            this.btnBorrar.IconRightZoom = 0D;
+            this.btnBorrar.IconVisible = true;
+            this.btnBorrar.IconZoom = 50D;
+            this.btnBorrar.IsTab = false;
+            this.btnBorrar.Location = new System.Drawing.Point(9, 230);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnBorrar.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btnBorrar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnBorrar.selected = false;
+            this.btnBorrar.Size = new System.Drawing.Size(252, 51);
+            this.btnBorrar.TabIndex = 11;
+            this.btnBorrar.Text = "               BORRAR";
+            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorrar.Textcolor = System.Drawing.Color.LightGray;
+            this.btnBorrar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // bunifuFlatButton2
+            // btnNuevo
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "               NUEVO";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 50D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(9, 90);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(252, 51);
-            this.bunifuFlatButton2.TabIndex = 9;
-            this.bunifuFlatButton2.Text = "               NUEVO";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.LightGray;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.BunifuFlatButton2_Click);
+            this.btnNuevo.Activecolor = System.Drawing.Color.Transparent;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.BorderRadius = 0;
+            this.btnNuevo.ButtonText = "               NUEVO";
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNuevo.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Iconimage")));
+            this.btnNuevo.Iconimage_right = null;
+            this.btnNuevo.Iconimage_right_Selected = null;
+            this.btnNuevo.Iconimage_Selected = null;
+            this.btnNuevo.IconMarginLeft = 0;
+            this.btnNuevo.IconMarginRight = 0;
+            this.btnNuevo.IconRightVisible = true;
+            this.btnNuevo.IconRightZoom = 0D;
+            this.btnNuevo.IconVisible = true;
+            this.btnNuevo.IconZoom = 50D;
+            this.btnNuevo.IsTab = false;
+            this.btnNuevo.Location = new System.Drawing.Point(9, 90);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnNuevo.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btnNuevo.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNuevo.selected = false;
+            this.btnNuevo.Size = new System.Drawing.Size(252, 51);
+            this.btnNuevo.TabIndex = 9;
+            this.btnNuevo.Text = "               NUEVO";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Textcolor = System.Drawing.Color.LightGray;
+            this.btnNuevo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // LineaSidebar
             // 
@@ -306,20 +306,20 @@
             this.Grilla.AllowUserToAddRows = false;
             this.Grilla.AllowUserToDeleteRows = false;
             this.Grilla.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Grilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Grilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.Grilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Grilla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.Grilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grilla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.Grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -344,8 +344,6 @@
             this.Grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grilla.Size = new System.Drawing.Size(763, 538);
             this.Grilla.TabIndex = 23;
-//            this.Grilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grilla_RowEnter);
-//            this.Grilla.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grilla_RowHeaderMouseDoubleClick);
             this.Grilla.SelectionChanged += new System.EventHandler(this.BunifuCustomDataGrid1_SelectionChanged);
             // 
             // ID
@@ -569,8 +567,6 @@
         private Bunifu.Framework.UI.BunifuGradientPanel Sidebar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Panel panel2;
@@ -594,7 +590,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
-        private Bunifu.Framework.UI.BunifuFlatButton btnActualizar;
+        public Bunifu.Framework.UI.BunifuFlatButton btnBorrar;
+        public Bunifu.Framework.UI.BunifuFlatButton btnNuevo;
+        public Bunifu.Framework.UI.BunifuFlatButton btnActualizar;
     }
 }
 

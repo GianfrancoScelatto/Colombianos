@@ -22,7 +22,6 @@ namespace CU
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-
             usuario.Mail = txtMail.Text;
             usuario.Nick = txtNick.Text;
             usuario.IDPregunta = Convert.ToInt32(((DataRowView)cmbBoxPreguntas.SelectedItem)["ID_Pregunta"]);

@@ -40,24 +40,24 @@ namespace CU
 
             var conexion = new SqlConnection();
             var comando = new SqlCommand();
-            var comando1 = new SqlCommand();
-            var comando2 = new SqlCommand();
             var BaseDeDatos = new Connect();
             conexion = BaseDeDatos.Abrir();
             comando.Connection = conexion;
-            comando1.Connection = conexion;
-            comando2.Connection = conexion;
-            comando.CommandText = "Select nickname FROM Cuenta";
-            comando1.CommandText = "Select email FROM Cuenta";
-            comando2.CommandText = "Select contraseña FROM Cuenta";
-            user.Nick = comando.ExecuteScalar().ToString();
-            user.Mail = comando1.ExecuteScalar().ToString();
-            user.Contraseña = comando2.ExecuteScalar().ToString();
+            comando.CommandText = "SELECT nickname, email, contraseña FROM Cuenta WHERE nickname='" + txtuser.Text + "' or email='" + txtuser.Text + "' and contraseña='" + user.Contraseña + "'";
+            var rdr = comando.ExecuteReader();
+            var reg = new Usuario();
 
-            if (user.Mail == txtuser.Text || user.Nick == txtuser.Text && user.Contraseña == txtcontra.Text)
+            while (rdr != null && rdr.Read())
+            {                
+                reg.Nick = (string)rdr["nickname"];
+                reg.Mail = (string)rdr["email"];
+                reg.Contraseña = (string)rdr["contraseña"];
+            }
+
+            if (reg.Mail == txtuser.Text || reg.Nick == txtuser.Text && reg.Contraseña == txtcontra.Text)
             {
-
                 this.Hide();
+                MessageBox.Show("Acceso exitoso");
                 MenuL = new Menu();
                 MenuL.Show();
             }
@@ -75,21 +75,16 @@ namespace CU
             }
         }
 
-        private void BunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            registro = new Registro();
-            registro.Show();
-        }
-
-        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-          
-        }
-
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RContrasena = new RecuperarContraseña();
             RContrasena.Show();
+        }
+
+        private void BtnRegistro_Click(object sender, EventArgs e)
+        {
+            registro = new Registro();
+            registro.Show();
         }
     }
 }

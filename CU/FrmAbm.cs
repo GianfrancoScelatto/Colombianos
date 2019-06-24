@@ -15,7 +15,7 @@ namespace CU
     {
         public Cliente cliente;
         public Ciudad ciudad;
-        public bool bandera=false;
+        public bool bandera; 
         int _dni = 0;
         public FrmAbm(int dni)
         {
@@ -27,7 +27,7 @@ namespace CU
             
             if (_dni == 0)
             {
-                MessageBox.Show("Funciono");
+
             }
             else
             {
@@ -67,9 +67,10 @@ namespace CU
             WindowState = FormWindowState.Minimized;
         }
 
+
         private void PbCerrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide();            
         }
 
         private void BtnAccion_Click_1(object sender, EventArgs e)
@@ -93,9 +94,17 @@ namespace CU
             cliente.Correo = Correo.Text;
             cliente.Direccion = Address.Text;
             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
+
+            if (bandera == true)
+            {
+                cliente.Accion(cliente, "UPDATE");
+                MessageBox.Show("¡Cliente actualizado con éxito!", "Actualizar cliente", MessageBoxButtons.OK);
+                bandera = false;
+            }
+            else { 
             cliente.Accion(cliente, "ALTA");
-            MessageBox.Show("¡Cliente nuevo ingresado con éxito!");
-                     
+            MessageBox.Show("¡Cliente nuevo ingresado con éxito!", "Crear cliente", MessageBoxButtons.OK);
+                }  
         }
         private void Correo_Leave(object sender, EventArgs e)
         {
@@ -104,6 +113,49 @@ namespace CU
                 MessageBox.Show("No válido");
                 Correo.Focus();
             }          
+        }
+        private void Documento_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Documento.Text))
+            {
+                MessageBox.Show("Este campo es obligatorio");
+            }
+        }
+
+        private void Nombre_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Nombre.Text))
+            {
+                MessageBox.Show("Este campo es obligatorio");
+            }
+        }
+
+        private void Address_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Address.Text))
+            {
+                MessageBox.Show("Este campo es obligatorio");
+            }
+        }
+
+        private void Documento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
