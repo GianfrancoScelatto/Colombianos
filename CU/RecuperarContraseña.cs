@@ -42,6 +42,10 @@ namespace CU
             }
         }
 
+        public void ValidarDatos()
+        {
+           
+        }
         private void RecuperarContraseña_Load_1(object sender, EventArgs e)
         {
             CargarUsuario();
@@ -60,6 +64,7 @@ namespace CU
         private void txtNickEmail_TextChanged(object sender, EventArgs e)
         {
             CargarUsuario();
+
             if (txtNickEmail.Text == "")
             {
                 txtPregunta.Clear();

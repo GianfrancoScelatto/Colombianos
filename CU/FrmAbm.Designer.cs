@@ -155,7 +155,6 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(480, 555);
             this.bunifuGradientPanel1.TabIndex = 0;
-            this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.BunifuGradientPanel1_Paint);
             // 
             // rbtnF
             // 
@@ -229,6 +228,7 @@
             this.Correo.Size = new System.Drawing.Size(278, 37);
             this.Correo.TabIndex = 30;
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Correo.Leave += new System.EventHandler(this.Correo_Leave);
             // 
             // Nombre
             // 

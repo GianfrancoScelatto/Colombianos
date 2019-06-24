@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnActualizar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LineaSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,8 +57,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbRestaurar = new System.Windows.Forms.PictureBox();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.Buscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Buscartxt = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,11 +77,11 @@
             // 
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sidebar.Controls.Add(this.btnActualizar);
             this.Sidebar.Controls.Add(this.bunifuGradientPanel1);
             this.Sidebar.Controls.Add(this.pictureBox1);
             this.Sidebar.Controls.Add(this.bunifuFlatButton5);
             this.Sidebar.Controls.Add(this.bunifuFlatButton4);
-            this.Sidebar.Controls.Add(this.bunifuFlatButton3);
             this.Sidebar.Controls.Add(this.bunifuFlatButton2);
             this.Sidebar.Controls.Add(this.LineaSidebar);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -94,6 +94,41 @@
             this.Sidebar.Quality = 10;
             this.Sidebar.Size = new System.Drawing.Size(270, 538);
             this.Sidebar.TabIndex = 7;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Activecolor = System.Drawing.Color.Transparent;
+            this.btnActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderRadius = 0;
+            this.btnActualizar.ButtonText = "          ACTUALIZAR CLIENTE";
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnActualizar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnActualizar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Iconimage")));
+            this.btnActualizar.Iconimage_right = null;
+            this.btnActualizar.Iconimage_right_Selected = null;
+            this.btnActualizar.Iconimage_Selected = null;
+            this.btnActualizar.IconMarginLeft = 0;
+            this.btnActualizar.IconMarginRight = 0;
+            this.btnActualizar.IconRightVisible = true;
+            this.btnActualizar.IconRightZoom = 0D;
+            this.btnActualizar.IconVisible = true;
+            this.btnActualizar.IconZoom = 50D;
+            this.btnActualizar.IsTab = false;
+            this.btnActualizar.Location = new System.Drawing.Point(9, 157);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnActualizar.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btnActualizar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnActualizar.selected = false;
+            this.btnActualizar.Size = new System.Drawing.Size(252, 51);
+            this.btnActualizar.TabIndex = 21;
+            this.btnActualizar.Text = "          ACTUALIZAR CLIENTE";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Textcolor = System.Drawing.Color.LightGray;
+            this.btnActualizar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // bunifuGradientPanel1
             // 
@@ -189,41 +224,6 @@
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.LightGray;
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.bunifuFlatButton4.Click += new System.EventHandler(this.BunifuFlatButton4_Click);
-            // 
-            // bunifuFlatButton3
-            // 
-            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton3.BorderRadius = 0;
-            this.bunifuFlatButton3.ButtonText = "               ACTUALIZAR CLIENTE";
-            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton3.Iconimage")));
-            this.bunifuFlatButton3.Iconimage_right = null;
-            this.bunifuFlatButton3.Iconimage_right_Selected = null;
-            this.bunifuFlatButton3.Iconimage_Selected = null;
-            this.bunifuFlatButton3.IconMarginLeft = 0;
-            this.bunifuFlatButton3.IconMarginRight = 0;
-            this.bunifuFlatButton3.IconRightVisible = true;
-            this.bunifuFlatButton3.IconRightZoom = 0D;
-            this.bunifuFlatButton3.IconVisible = true;
-            this.bunifuFlatButton3.IconZoom = 50D;
-            this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(9, 160);
-            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.selected = false;
-            this.bunifuFlatButton3.Size = new System.Drawing.Size(252, 51);
-            this.bunifuFlatButton3.TabIndex = 10;
-            this.bunifuFlatButton3.Text = "               ACTUALIZAR CLIENTE";
-            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.LightGray;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bunifuFlatButton3.Click += new System.EventHandler(this.BunifuFlatButton3_Click);
             // 
             // bunifuFlatButton2
             // 
@@ -344,8 +344,8 @@
             this.Grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grilla.Size = new System.Drawing.Size(763, 538);
             this.Grilla.TabIndex = 23;
-            this.Grilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grilla_CellContentClick);
-            this.Grilla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grilla_CellDoubleClick);
+//            this.Grilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grilla_RowEnter);
+//            this.Grilla.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grilla_RowHeaderMouseDoubleClick);
             this.Grilla.SelectionChanged += new System.EventHandler(this.BunifuCustomDataGrid1_SelectionChanged);
             // 
             // ID
@@ -497,33 +497,31 @@
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(763, 538);
             this.bunifuGradientPanel2.TabIndex = 20;
             // 
-            // Buscar
+            // Buscartxt
             // 
-            this.Buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
-            this.Buscar.Location = new System.Drawing.Point(569, 12);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(184, 20);
-            this.Buscar.TabIndex = 21;
-            this.Buscar.Visible = false;
-            this.Buscar.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
+            this.Buscartxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.Buscartxt.Location = new System.Drawing.Point(569, 12);
+            this.Buscartxt.Name = "Buscartxt";
+            this.Buscartxt.Size = new System.Drawing.Size(184, 20);
+            this.Buscartxt.TabIndex = 21;
+            this.Buscartxt.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
             // 
-            // label2
+            // lblBuscar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(443, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 32);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "BUSCAR";
-            this.label2.Visible = false;
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.ForeColor = System.Drawing.Color.White;
+            this.lblBuscar.Location = new System.Drawing.Point(443, 9);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(120, 32);
+            this.lblBuscar.TabIndex = 22;
+            this.lblBuscar.Text = "BUSCAR";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Buscar);
+            this.panel1.Controls.Add(this.lblBuscar);
+            this.panel1.Controls.Add(this.Buscartxt);
             this.panel1.Controls.Add(this.bunifuGradientPanel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -572,7 +570,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuSeparator LineaSidebar;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
@@ -586,8 +583,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbRestaurar;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
-        private System.Windows.Forms.TextBox Buscar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox Buscartxt;
+        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
@@ -597,6 +594,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
+        private Bunifu.Framework.UI.BunifuFlatButton btnActualizar;
     }
 }
 

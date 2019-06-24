@@ -21,6 +21,7 @@ namespace CU
         public int dni;
         public Menu()
         {
+            formulario = new FrmAbm(dni);
             cliente = new Cliente();
 
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace CU
         public void CargarGrilla()
         {
             Grilla.Rows.Clear();
-            var cadena = Buscar.Text.ToString();
+            var cadena = Buscartxt.Text.ToString();
             var l = cliente.Listar(cadena);
 
             foreach (var x in l)
@@ -103,22 +104,12 @@ namespace CU
             cliente.Documento = Convert.ToInt32(Grilla.CurrentRow.Cells["Documento"].Value);
         }
 
-        private void Grilla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            dni = Convert.ToInt32(Grilla.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            dni = cliente.Documento;
             formulario = new FrmAbm(dni);
             formulario.Show();
-
         }
 
-        private void BunifuFlatButton3_Click(object sender, EventArgs e)
-        {
-            CargarGrilla();
-        }
-
-        private void Grilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

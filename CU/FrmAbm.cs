@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using LC;
 
 namespace CU
@@ -24,9 +25,9 @@ namespace CU
             InitializeComponent();
             Combo.Combo2campos(CBOCiudad, "NombreCiudad", "CodigoCiudad", "BaseCiudades");    
             
-            if (_dni == null)
+            if (_dni == 0)
             {
-
+                MessageBox.Show("Funciono");
             }
             else
             {
@@ -51,16 +52,31 @@ namespace CU
             }
         }
 
+        public bool validar(string correo)
+        {
+            return Regex.IsMatch(correo, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+        }           
+      
         private void Formulario_Load(object sender, EventArgs e)
         {
            
         }
-        
-        private void btnAccion_Click(object sender, EventArgs e)
+
+        private void PbMinimizar_Click(object sender, EventArgs e)
         {
-            if (Nombre.Text=="" || Correo.Text=="" || Direccion.Text=="" || Documento.Text == "")
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void PbCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void BtnAccion_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Documento.Text)||string.IsNullOrEmpty(Nombre.Text)||string.IsNullOrEmpty(Address.Text))
             {
-                MessageBox.Show("Completa todo amigo");
+                MessageBox.Show("Debe completar todos los datos", "Datos incompletos", MessageBoxButtons.OK);
                 return;
             }
 
@@ -79,61 +95,15 @@ namespace CU
             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
             cliente.Accion(cliente, "ALTA");
             MessageBox.Show("¡Cliente nuevo ingresado con éxito!");
-
+                     
         }
-
-        private void PbMinimizar_Click(object sender, EventArgs e)
+        private void Correo_Leave(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            if (validar(Correo.Text) == false)
+            {
+                MessageBox.Show("No válido");
+                Correo.Focus();
+            }          
         }
-
-        private void PbCerrar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void BunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void BtnAccion_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        /* private void Actualizar_Click_1(object sender, EventArgs e)
-         {
-             //  conn.Abrir();
-             if (Nombre.Text == "" || Correo.Text == "" || Direccion.text == "" || Documento.Text == "")
-             {
-                 MessageBox.Show("Completa todo amigo");
-                 return;
-             }
-
-             cliente.ID = Convert.ToInt32(ID.Text);
-             cliente.Documento = Convert.ToInt32(Documento.Text);
-             cliente.Nombre = Nombre.Text;
-
-             if ((rbtnM.Checked) == true)
-             {
-                 cliente.Sexo = "Masculino";
-             }
-             else cliente.Sexo = "Femenino";
-
-             cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
-             cliente.Correo = Correo.Text;
-             cliente.Direccion = Address.Text;
-             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
-
-             if (MessageBox.Show("¿Actualizar este cliente?", "Actualizar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
-             {
-                 cliente.Accion(cliente, "UPDATE");
-                 MessageBox.Show("El cliente ha sido actualizado exitosamente");
-             }
-
-             bandera = true;
-             this.Hide();
-         }*/
     }
 }

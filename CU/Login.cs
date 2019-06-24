@@ -19,7 +19,6 @@ namespace CU
         public Menu MenuL;
         int intentos;
         public Registro registro;
-        public Connect conn;
         public RecuperarContraseña RContrasena;
 
 
@@ -27,7 +26,6 @@ namespace CU
         public Login()
         {
             user = new Usuario();
-            conn = new Connect();
             InitializeComponent();
 
         }
@@ -38,7 +36,6 @@ namespace CU
         }
         private void BtnLog_Click_1(object sender, EventArgs e)
         {
-            conn.Abrir();
             intentos += 0;
 
             var conexion = new SqlConnection();
