@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.rbtnF = new System.Windows.Forms.RadioButton();
             this.rbtnM = new System.Windows.Forms.RadioButton();
             this.Fecha = new System.Windows.Forms.DateTimePicker();
@@ -124,6 +125,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnCancelar);
             this.bunifuGradientPanel1.Controls.Add(this.rbtnF);
             this.bunifuGradientPanel1.Controls.Add(this.rbtnM);
             this.bunifuGradientPanel1.Controls.Add(this.Fecha);
@@ -151,6 +153,41 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(480, 555);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderRadius = 0;
+            this.btnCancelar.ButtonText = "Cancelar";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Iconimage = null;
+            this.btnCancelar.Iconimage_right = null;
+            this.btnCancelar.Iconimage_right_Selected = null;
+            this.btnCancelar.Iconimage_Selected = null;
+            this.btnCancelar.IconMarginLeft = 0;
+            this.btnCancelar.IconMarginRight = 0;
+            this.btnCancelar.IconRightVisible = true;
+            this.btnCancelar.IconRightZoom = 0D;
+            this.btnCancelar.IconVisible = true;
+            this.btnCancelar.IconZoom = 90D;
+            this.btnCancelar.IsTab = false;
+            this.btnCancelar.Location = new System.Drawing.Point(46, 504);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelar.selected = false;
+            this.btnCancelar.Size = new System.Drawing.Size(132, 29);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Textcolor = System.Drawing.Color.White;
+            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // rbtnF
             // 
@@ -180,7 +217,7 @@
             // 
             // Fecha
             // 
-            this.Fecha.Location = new System.Drawing.Point(165, 243);
+            this.Fecha.Location = new System.Drawing.Point(165, 268);
             this.Fecha.Name = "Fecha";
             this.Fecha.Size = new System.Drawing.Size(278, 20);
             this.Fecha.TabIndex = 32;
@@ -190,7 +227,7 @@
             this.Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.Address.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Address.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Address.ForeColor = System.Drawing.Color.Transparent;
+            this.Address.ForeColor = System.Drawing.Color.White;
             this.Address.HintForeColor = System.Drawing.Color.Empty;
             this.Address.HintText = "";
             this.Address.isPassword = false;
@@ -198,7 +235,7 @@
             this.Address.LineIdleColor = System.Drawing.Color.Transparent;
             this.Address.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.Address.LineThickness = 3;
-            this.Address.Location = new System.Drawing.Point(165, 363);
+            this.Address.Location = new System.Drawing.Point(165, 384);
             this.Address.Margin = new System.Windows.Forms.Padding(4);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(278, 37);
@@ -211,7 +248,7 @@
             this.Correo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.Correo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Correo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Correo.ForeColor = System.Drawing.Color.Transparent;
+            this.Correo.ForeColor = System.Drawing.Color.White;
             this.Correo.HintForeColor = System.Drawing.Color.Empty;
             this.Correo.HintText = "";
             this.Correo.isPassword = false;
@@ -219,7 +256,7 @@
             this.Correo.LineIdleColor = System.Drawing.Color.Transparent;
             this.Correo.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.Correo.LineThickness = 3;
-            this.Correo.Location = new System.Drawing.Point(165, 296);
+            this.Correo.Location = new System.Drawing.Point(165, 326);
             this.Correo.Margin = new System.Windows.Forms.Padding(4);
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(278, 37);
@@ -232,7 +269,7 @@
             this.Nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.Nombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Nombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Nombre.ForeColor = System.Drawing.Color.Transparent;
+            this.Nombre.ForeColor = System.Drawing.Color.White;
             this.Nombre.HintForeColor = System.Drawing.Color.Empty;
             this.Nombre.HintText = "";
             this.Nombre.isPassword = false;
@@ -240,7 +277,7 @@
             this.Nombre.LineIdleColor = System.Drawing.Color.Transparent;
             this.Nombre.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.Nombre.LineThickness = 3;
-            this.Nombre.Location = new System.Drawing.Point(165, 103);
+            this.Nombre.Location = new System.Drawing.Point(165, 112);
             this.Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(278, 37);
@@ -254,7 +291,7 @@
             this.Documento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.Documento.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Documento.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Documento.ForeColor = System.Drawing.Color.Transparent;
+            this.Documento.ForeColor = System.Drawing.Color.White;
             this.Documento.HintForeColor = System.Drawing.Color.Empty;
             this.Documento.HintText = "";
             this.Documento.isPassword = false;
@@ -276,7 +313,7 @@
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(42, 253);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(42, 268);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(98, 19);
             this.bunifuCustomLabel9.TabIndex = 26;
@@ -338,7 +375,7 @@
             this.CBOCiudad.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.CBOCiudad.ForeColor = System.Drawing.Color.White;
             this.CBOCiudad.FormattingEnabled = true;
-            this.CBOCiudad.Location = new System.Drawing.Point(165, 426);
+            this.CBOCiudad.Location = new System.Drawing.Point(165, 447);
             this.CBOCiudad.Name = "CBOCiudad";
             this.CBOCiudad.Size = new System.Drawing.Size(278, 24);
             this.CBOCiudad.TabIndex = 13;
@@ -348,7 +385,7 @@
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(57, 428);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(42, 452);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(68, 19);
             this.bunifuCustomLabel8.TabIndex = 7;
@@ -359,7 +396,7 @@
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(49, 372);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(42, 393);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(83, 19);
             this.bunifuCustomLabel7.TabIndex = 6;
@@ -370,7 +407,7 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(59, 305);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(42, 335);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(61, 19);
             this.bunifuCustomLabel6.TabIndex = 5;
@@ -381,7 +418,7 @@
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(49, 234);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(42, 249);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(83, 19);
             this.bunifuCustomLabel5.TabIndex = 4;
@@ -393,7 +430,7 @@
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(64, 175);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(42, 188);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(46, 19);
             this.bunifuCustomLabel4.TabIndex = 3;
@@ -404,7 +441,7 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(52, 112);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(42, 121);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(73, 19);
             this.bunifuCustomLabel3.TabIndex = 2;
@@ -430,6 +467,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAbm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario";
             this.Load += new System.EventHandler(this.Formulario_Load);
             this.panel1.ResumeLayout(false);
@@ -468,5 +506,6 @@
         private System.Windows.Forms.PictureBox pbCerrar;
         public System.Windows.Forms.RadioButton rbtnF;
         public System.Windows.Forms.RadioButton rbtnM;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancelar;
     }
 }

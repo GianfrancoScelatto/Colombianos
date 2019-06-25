@@ -7,7 +7,6 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Windows.Forms;
-using System.Net.Mail;
 using LC;
 
 namespace CU
@@ -16,8 +15,6 @@ namespace CU
     {
         public FrmAbm formulario;
         public Cliente cliente;
-        public int i;
-        public string[] vectorCliente = new string[8];
         public int dni;
         public Menu()
         {
@@ -118,6 +115,12 @@ namespace CU
                 return;
 
             Grilla.Rows.Remove(Grilla.CurrentRow);
+        }
+
+        private void Grilla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dni = Convert.ToInt32(Grilla.Rows[e.RowIndex].Cells[1].Value.ToString());
+            formulario.Show();
         }
     }
 }

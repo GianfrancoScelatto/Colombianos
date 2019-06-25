@@ -70,7 +70,18 @@ namespace CU
 
         private void PbCerrar_Click(object sender, EventArgs e)
         {
-            this.Hide();            
+            Limpieza();
+        }
+
+        private void Limpieza()
+        {
+            this.Hide();
+            Documento.ResetText();
+            Nombre.ResetText();
+            rbtnM.Checked = true;
+            Fecha.Value = DateTime.Now;
+            Correo.ResetText();
+            Address.ResetText();
         }
 
         private void BtnAccion_Click_1(object sender, EventArgs e)
@@ -156,6 +167,11 @@ namespace CU
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpieza();
         }
     }
 }

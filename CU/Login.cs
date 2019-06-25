@@ -54,10 +54,10 @@ namespace CU
                 reg.Contraseña = (string)rdr["contraseña"];
             }
 
-            if (reg.Mail == txtuser.Text || reg.Nick == txtuser.Text && reg.Contraseña == txtcontra.Text)
+            if (reg.Mail == txtuser.Text || reg.Nick == txtuser.Text && reg.Contraseña == txtPass.Text)
             {
                 this.Hide();
-                MessageBox.Show("Acceso exitoso");
+                MessageBox.Show("Acceso exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MenuL = new Menu();
                 MenuL.Show();
             }
@@ -85,6 +85,16 @@ namespace CU
         {
             registro = new Registro();
             registro.Show();
+        }
+
+        private void PbMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void PbCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

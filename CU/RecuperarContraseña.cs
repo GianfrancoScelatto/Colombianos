@@ -27,12 +27,12 @@ namespace CU
         }
         public void CargarUsuario()
         {
-            var cadena = txtNickEmail.Text;
+            var cadena = txtMailNick.Text;
             var l = _user.ListarUser(cadena);
 
             foreach (var x in l)
             {
-                txtPregunta.Text = x.pregunta.Descripcion ;
+                txtPreg.Text = x.pregunta.Descripcion ;
                 resp = x.Respuesta;
                 _user.Nick = x.Nick;
                 _user.Mail = x.Mail;
@@ -42,9 +42,12 @@ namespace CU
             }
         }
 
-        public void ValidarDatos()
+        public void Limpieza()
         {
-           
+            txtMailNick.ResetText();
+            txtPass.ResetText();
+            txtCFPass.ResetText();
+            txtResp.ResetText();
         }
         private void RecuperarContraseña_Load_1(object sender, EventArgs e)
         {
@@ -53,9 +56,9 @@ namespace CU
 
         private void bttnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtRespuesta.Text == resp)
+            if (txtResp.Text == resp)
             {
-                _user.Contraseña = txtContraseña.Text;
+                _user.Contraseña = b.Text;
                 _user.UsuarioAccion( _user, "EDITAR");
                 MessageBox.Show("editado");
             }
@@ -65,10 +68,38 @@ namespace CU
         {
             CargarUsuario();
 
-            if (txtNickEmail.Text == "")
+            if (txtMailNick.Text == "")
             {
-                txtPregunta.Clear();
+                txtPreg.ResetText();
             }
+        }
+
+        private void TxtCFPass_Leave(object sender, EventArgs e)
+        {
+            if (b.Text != a.Text)
+            {
+                MessageBox.Show("No coinciden las contraseñas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                b.ResetText();
+                a.ResetText();
+                b.Focus();
+            }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Limpieza();
+        }
+
+        private void PbCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Limpieza();
+        }
+
+        private void PbMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
