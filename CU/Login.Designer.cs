@@ -35,14 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.btnRegistro = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLog = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtcontra = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtuser = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.LkLblPass = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -120,7 +120,7 @@
             this.bunifuGradientPanel1.Controls.Add(this.txtcontra);
             this.bunifuGradientPanel1.Controls.Add(this.txtuser);
             this.bunifuGradientPanel1.Controls.Add(this.label4);
-            this.bunifuGradientPanel1.Controls.Add(this.linkLabel1);
+            this.bunifuGradientPanel1.Controls.Add(this.LkLblPass);
             this.bunifuGradientPanel1.Controls.Add(this.label3);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
@@ -132,6 +132,20 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(402, 343);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.Location = new System.Drawing.Point(158, 122);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '•';
+            this.txtPass.Size = new System.Drawing.Size(216, 17);
+            this.txtPass.TabIndex = 1;
+            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // btnRegistro
             // 
@@ -154,7 +168,7 @@
             this.btnRegistro.IconVisible = true;
             this.btnRegistro.IconZoom = 90D;
             this.btnRegistro.IsTab = false;
-            this.btnRegistro.Location = new System.Drawing.Point(57, 249);
+            this.btnRegistro.Location = new System.Drawing.Point(247, 244);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnRegistro.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -189,7 +203,7 @@
             this.btnLog.IconVisible = true;
             this.btnLog.IconZoom = 90D;
             this.btnLog.IsTab = false;
-            this.btnLog.Location = new System.Drawing.Point(233, 249);
+            this.btnLog.Location = new System.Drawing.Point(60, 244);
             this.btnLog.Name = "btnLog";
             this.btnLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -241,9 +255,9 @@
             this.txtuser.Margin = new System.Windows.Forms.Padding(4);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(216, 33);
-            this.txtuser.TabIndex = 26;
-            this.txtuser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-      //      this.txtuser.Leave += new System.EventHandler(this.Txtuser_Leave);
+            this.txtuser.TabIndex = 0;
+            this.txtuser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtuser.Leave += new System.EventHandler(this.txtuser_Leave);
             // 
             // label4
             // 
@@ -256,20 +270,20 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Usuario o Mail";
             // 
-            // linkLabel1
+            // LkLblPass
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.DisabledLinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(129, 191);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(148, 17);
-            this.linkLabel1.TabIndex = 22;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "¿Olvido su contraseña?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            this.LkLblPass.AutoSize = true;
+            this.LkLblPass.BackColor = System.Drawing.Color.Transparent;
+            this.LkLblPass.DisabledLinkColor = System.Drawing.Color.DimGray;
+            this.LkLblPass.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LkLblPass.LinkColor = System.Drawing.Color.White;
+            this.LkLblPass.Location = new System.Drawing.Point(134, 190);
+            this.LkLblPass.Name = "LkLblPass";
+            this.LkLblPass.Size = new System.Drawing.Size(136, 15);
+            this.LkLblPass.TabIndex = 22;
+            this.LkLblPass.TabStop = true;
+            this.LkLblPass.Text = "¿Olvidó su contraseña?";
+            this.LkLblPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LkLblPass_LinkClicked_1);
             // 
             // label3
             // 
@@ -281,19 +295,6 @@
             this.label3.Size = new System.Drawing.Size(98, 19);
             this.label3.TabIndex = 21;
             this.label3.Text = "Contraseña";
-            // 
-            // txtPass
-            // 
-            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.White;
-            this.txtPass.Location = new System.Drawing.Point(158, 122);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '•';
-            this.txtPass.Size = new System.Drawing.Size(216, 17);
-            this.txtPass.TabIndex = 30;
-            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Login
             // 
@@ -329,7 +330,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtcontra;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtuser;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel LkLblPass;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuFlatButton btnLog;
         private Bunifu.Framework.UI.BunifuFlatButton btnRegistro;

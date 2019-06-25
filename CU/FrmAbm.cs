@@ -101,7 +101,7 @@ namespace CU
             }
             else cliente.Sexo = "Femenino";
 
-            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
+            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("dd-MM-yyyy"));
             cliente.Correo = Correo.Text;
             cliente.Direccion = Address.Text;
             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);

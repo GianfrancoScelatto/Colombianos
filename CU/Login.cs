@@ -57,19 +57,18 @@ namespace CU
             if (reg.Mail == txtuser.Text || reg.Nick == txtuser.Text && reg.Contraseña == txtPass.Text)
             {
                 this.Hide();
-                MessageBox.Show("Acceso exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MenuL = new Menu();
                 MenuL.Show();
             }
             else if (intentos == 3)
             {
-                MessageBox.Show("Ha alcanzado el nivel maximo de intentos, Porfavor vuelva a intentarlo", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha alcanzado el nivel máximo de intentos, por favor vuelva a intentarlo.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
             else
             {
                 intentos += 1;
-                MessageBox.Show("Error de autenticacion, verifique usuario y/O contraseña ó es posible que su cuenta este inhabilitada", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error de autenticación, verifique usuario y/o contraseña o es posible que su cuenta esté inhabilitada.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtcontra.Text = "";
 
             }
@@ -95,6 +94,30 @@ namespace CU
         private void PbCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LkLblPass_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RContrasena = new RecuperarContraseña();
+            RContrasena.Show();
+        }
+
+        private void txtuser_Leave(object sender, EventArgs e)
+        {
+            if (txtuser.Text == "")
+            {
+                MessageBox.Show("Debe completar este campo.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtuser.Focus();
+            }
+        }
+
+        private void txtPass_Leave(object sender, EventArgs e)
+        {
+            if (txtPass.Text == "")
+            {
+                MessageBox.Show("Debe completar este campo.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPass.Focus();
+            }
         }
     }
 }

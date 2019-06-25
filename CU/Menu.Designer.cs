@@ -311,6 +311,7 @@
             this.Grilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Grilla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.Grilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.Grilla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
@@ -344,7 +345,7 @@
             this.Grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grilla.Size = new System.Drawing.Size(763, 538);
             this.Grilla.TabIndex = 23;
-            this.Grilla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grilla_CellDoubleClick);
+     //     this.Grilla.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Grilla_RowsAdded);
             this.Grilla.SelectionChanged += new System.EventHandler(this.BunifuCustomDataGrid1_SelectionChanged);
             // 
             // ID
@@ -572,7 +573,6 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel3;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid Grilla;
         private System.Windows.Forms.PictureBox pbMaximizar;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pbCerrar;
@@ -594,6 +594,7 @@
         public Bunifu.Framework.UI.BunifuFlatButton btnBorrar;
         public Bunifu.Framework.UI.BunifuFlatButton btnNuevo;
         public Bunifu.Framework.UI.BunifuFlatButton btnActualizar;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid Grilla;
     }
 }
 

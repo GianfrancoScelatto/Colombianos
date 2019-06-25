@@ -260,7 +260,7 @@
             this.txtNick.TabIndex = 1;
             this.txtNick.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNick.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNick_KeyPress);
-//            this.txtNick.Leave += new System.EventHandler(this.TxtNick_Leave);
+            this.txtNick.Leave += new System.EventHandler(this.txtNick_Leave);
             // 
             // btnCrear
             // 
@@ -316,7 +316,7 @@
             this.txtMail.Size = new System.Drawing.Size(210, 33);
             this.txtMail.TabIndex = 0;
             this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMail.Leave += new System.EventHandler(this.TxtMail_Leave);
+            this.txtMail.Leave += new System.EventHandler(this.txtMail_Leave);
             // 
             // label5
             // 

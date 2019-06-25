@@ -22,6 +22,10 @@ namespace CU
             Combo.Combo2campos(cmbBoxPreguntas, "Descripcion", "ID_Pregunta", "Pregunta");
         }
 
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             if (txtMail.Text == "" || txtNick.Text == "" || txtPass.Text == "" || txtCFPass.Text == "" || txtRespuesta.Text == "")
@@ -56,25 +60,6 @@ namespace CU
             Limpieza();
         }
 
-        private void TxtMail_Leave(object sender, EventArgs e)
-        {
-            
-            CargarUsuario();
-
-                if (txtNick.Text == nick || txtMail.Text == mail)
-                {
-                    MessageBox.Show("El usuario ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-           
-
-            if (validar(txtMail.Text) == false)
-            {
-                MessageBox.Show("No válido");
-                txtMail.Focus();
-            }
-        }
-
-
         private void TxtNick_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(e.KeyChar != (char)Keys.Space))
@@ -105,23 +90,53 @@ namespace CU
             WindowState = FormWindowState.Minimized;
         }
 
-        public void CargarUsuario()
+        public void CheckNick()
         {
             var cadena = txtNick.Text;
             var l = usuario.ListarUser(cadena);
 
             foreach (var x in l)
             {
-                nick = x.Nick;
-                mail = x.Mail;
-
+                nick = x.Nick;       
             }
         }
-        private void TxtNick_Leave(object sender, EventArgs e)
+
+        public void CheckMail()
         {
-            if (txtNick.Text == nick || txtMail.Text== mail)
+            var cadena = txtMail.Text;
+            var l = usuario.ListarUser(cadena);
+
+            foreach (var x in l)
+            {
+                mail = x.Mail;
+            }
+        }
+
+        private void txtNick_Leave(object sender, EventArgs e)
+        {
+            CheckNick();
+
+            if (txtNick.Text == nick)
             {
                 MessageBox.Show("El usuario ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNick.Focus();
+            }
+        }
+
+        private void txtMail_Leave(object sender, EventArgs e)
+        {
+            CheckMail();
+
+            if (txtMail.Text == mail)
+            {
+                MessageBox.Show("El usuario ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtMail.Focus();
+            }
+
+            if (validar(txtMail.Text) == false)
+            {
+                MessageBox.Show("Correo no válido");
+                txtMail.Focus();
             }
         }
     }

@@ -33,7 +33,7 @@ namespace LC
             {
                 conexion = BaseDeDatos.Abrir();
                 comando.Connection = conexion;
-                comando.CommandText = "Select t1.*, t2.Descripcion " + " From Cuenta as t1 " + " Inner Join Pregunta as t2 " + " On t1.FK_ID_Pregunta = t2.ID_Pregunta " + "where nickname='" + cadena + "' or email=' " + cadena + "' Order by t1.nickname";
+                comando.CommandText = "Select t1.*, t2.Descripcion " + " From Cuenta as t1 " + " Inner Join Pregunta as t2 " + " On t1.FK_ID_Pregunta = t2.ID_Pregunta " + "where nickname='" + cadena + "' or email= '" + cadena + "' Order by t1.nickname";
                 var rdr = comando.ExecuteReader();
 
                 while (rdr != null && rdr.Read())
