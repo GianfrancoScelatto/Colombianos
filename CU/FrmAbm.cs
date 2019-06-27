@@ -15,16 +15,16 @@ namespace CU
     {
         public Cliente cliente;
         public Ciudad ciudad;
-        public bool bandera; 
-        int _dni = 0;
+        public bool bandera;
+        int _dni;
         public FrmAbm(int dni)
         {
             _dni = dni;
             cliente = new Cliente();
             ciudad = new Ciudad();
             InitializeComponent();
-            Combo.Combo2campos(CBOCiudad, "NombreCiudad", "CodigoCiudad", "BaseCiudades");    
-            
+            Combo.Combo2campos(CBOCiudad, "NombreCiudad", "CodigoCiudad", "BaseCiudades");
+
             if (_dni == 0)
             {
 
@@ -43,7 +43,7 @@ namespace CU
                         cliente.Sexo = "Masculino";
                     }
                     else cliente.Sexo = "Femenino";
-                    
+
                     Fecha.Text = x.FechaNacimiento.ToString("MM-dd-yyyy");
                     Correo.Text = x.Correo;
                     Address.Text = x.Direccion;
@@ -55,11 +55,11 @@ namespace CU
         public bool validar(string correo)
         {
             return Regex.IsMatch(correo, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
-        }           
-      
+        }
+
         private void Formulario_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void PbMinimizar_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace CU
 
         private void BtnAccion_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Documento.Text)||string.IsNullOrEmpty(Nombre.Text)||string.IsNullOrEmpty(Address.Text))
+            if (string.IsNullOrEmpty(Documento.Text) || string.IsNullOrEmpty(Nombre.Text) || string.IsNullOrEmpty(Address.Text) || string.IsNullOrEmpty(Correo.Text))
             {
                 MessageBox.Show("Debe completar todos los datos", "Datos incompletos", MessageBoxButtons.OK);
                 return;
@@ -101,7 +101,7 @@ namespace CU
             }
             else cliente.Sexo = "Femenino";
 
-            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("dd-MM-yyyy"));
+            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
             cliente.Correo = Correo.Text;
             cliente.Direccion = Address.Text;
             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
@@ -112,18 +112,24 @@ namespace CU
                 MessageBox.Show("¡Cliente actualizado con éxito!", "Actualizar cliente", MessageBoxButtons.OK);
                 bandera = false;
             }
-            else { 
-            cliente.Accion(cliente, "ALTA");
-            MessageBox.Show("¡Cliente nuevo ingresado con éxito!", "Crear cliente", MessageBoxButtons.OK);
-                }  
+            else
+            {
+                cliente.Accion(cliente, "ALTA");
+                MessageBox.Show("¡Cliente nuevo ingresado con éxito!", "Crear cliente", MessageBoxButtons.OK);
+            }
         }
         private void Correo_Leave(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Correo.Text))
+            {
+                MessageBox.Show("Este campo es obligatorio");
+            }
+
             if (validar(Correo.Text) == false)
             {
                 MessageBox.Show("No válido");
                 Correo.Focus();
-            }          
+            }
         }
         private void Documento_Leave(object sender, EventArgs e)
         {
@@ -168,10 +174,21 @@ namespace CU
                 return;
             }
         }
+        private void Correo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("No se permiten espacios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpieza();
         }
+
+        
     }
 }

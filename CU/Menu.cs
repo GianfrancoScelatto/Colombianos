@@ -122,6 +122,7 @@ namespace CU
             dni = Convert.ToInt32(Grilla.Rows[e.RowIndex].Cells[1].Value.ToString());
             formulario = new FrmAbm(dni);
             formulario.Show();
+            formulario.bandera = true;
         }
     }
 }

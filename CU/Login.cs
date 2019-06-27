@@ -69,7 +69,7 @@ namespace CU
             {
                 intentos += 1;
                 MessageBox.Show("Error de autenticación, verifique usuario y/o contraseña o es posible que su cuenta esté inhabilitada.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtcontra.Text = "";
+                txtPass.Text = "";
 
             }
         }
@@ -78,12 +78,6 @@ namespace CU
         {
             RContrasena = new RecuperarContraseña();
             RContrasena.Show();
-        }
-
-        private void BtnRegistro_Click(object sender, EventArgs e)
-        {
-            registro = new Registro();
-            registro.Show();
         }
 
         private void PbMinimizar_Click(object sender, EventArgs e)
@@ -117,6 +111,23 @@ namespace CU
             {
                 MessageBox.Show("Debe completar este campo.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPass.Focus();
+            }
+        }
+
+        private void LkLblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            registro = new Registro();
+            registro.Show();
+        }
+        private void PassCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (passCheck.Checked == true)
+            {
+                txtPass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
             }
         }
     }

@@ -164,7 +164,7 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
             this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Iconimage = null;
+            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
             this.btnCancelar.Iconimage_right = null;
             this.btnCancelar.Iconimage_right_Selected = null;
             this.btnCancelar.Iconimage_Selected = null;
@@ -173,15 +173,15 @@
             this.btnCancelar.IconRightVisible = true;
             this.btnCancelar.IconRightZoom = 0D;
             this.btnCancelar.IconVisible = true;
-            this.btnCancelar.IconZoom = 90D;
+            this.btnCancelar.IconZoom = 70D;
             this.btnCancelar.IsTab = false;
-            this.btnCancelar.Location = new System.Drawing.Point(46, 504);
+            this.btnCancelar.Location = new System.Drawing.Point(325, 504);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancelar.selected = false;
-            this.btnCancelar.Size = new System.Drawing.Size(132, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(118, 29);
             this.btnCancelar.TabIndex = 36;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,7 +197,7 @@
             this.rbtnF.Location = new System.Drawing.Point(315, 184);
             this.rbtnF.Name = "rbtnF";
             this.rbtnF.Size = new System.Drawing.Size(105, 23);
-            this.rbtnF.TabIndex = 35;
+            this.rbtnF.TabIndex = 3;
             this.rbtnF.Text = "Femenino";
             this.rbtnF.UseVisualStyleBackColor = false;
             // 
@@ -210,7 +210,7 @@
             this.rbtnM.Location = new System.Drawing.Point(188, 184);
             this.rbtnM.Name = "rbtnM";
             this.rbtnM.Size = new System.Drawing.Size(106, 23);
-            this.rbtnM.TabIndex = 34;
+            this.rbtnM.TabIndex = 2;
             this.rbtnM.TabStop = true;
             this.rbtnM.Text = "Masculino";
             this.rbtnM.UseVisualStyleBackColor = false;
@@ -218,9 +218,12 @@
             // Fecha
             // 
             this.Fecha.Location = new System.Drawing.Point(165, 268);
+            this.Fecha.MaxDate = new System.DateTime(2001, 12, 31, 0, 0, 0, 0);
+            this.Fecha.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.Fecha.Name = "Fecha";
             this.Fecha.Size = new System.Drawing.Size(278, 20);
-            this.Fecha.TabIndex = 32;
+            this.Fecha.TabIndex = 4;
+            this.Fecha.Value = new System.DateTime(2001, 12, 31, 0, 0, 0, 0);
             // 
             // Address
             // 
@@ -228,18 +231,18 @@
             this.Address.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Address.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Address.ForeColor = System.Drawing.Color.White;
-            this.Address.HintForeColor = System.Drawing.Color.Empty;
+            this.Address.HintForeColor = System.Drawing.Color.White;
             this.Address.HintText = "";
             this.Address.isPassword = false;
-            this.Address.LineFocusedColor = System.Drawing.Color.Blue;
+            this.Address.LineFocusedColor = System.Drawing.Color.Transparent;
             this.Address.LineIdleColor = System.Drawing.Color.Transparent;
-            this.Address.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.Address.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.Address.LineThickness = 3;
             this.Address.Location = new System.Drawing.Point(165, 384);
             this.Address.Margin = new System.Windows.Forms.Padding(4);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(278, 37);
-            this.Address.TabIndex = 31;
+            this.Address.TabIndex = 6;
             this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Address.Leave += new System.EventHandler(this.Address_Leave);
             // 
@@ -249,19 +252,20 @@
             this.Correo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Correo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Correo.ForeColor = System.Drawing.Color.White;
-            this.Correo.HintForeColor = System.Drawing.Color.Empty;
+            this.Correo.HintForeColor = System.Drawing.Color.White;
             this.Correo.HintText = "";
             this.Correo.isPassword = false;
-            this.Correo.LineFocusedColor = System.Drawing.Color.Blue;
+            this.Correo.LineFocusedColor = System.Drawing.Color.Transparent;
             this.Correo.LineIdleColor = System.Drawing.Color.Transparent;
-            this.Correo.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.Correo.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.Correo.LineThickness = 3;
             this.Correo.Location = new System.Drawing.Point(165, 326);
             this.Correo.Margin = new System.Windows.Forms.Padding(4);
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(278, 37);
-            this.Correo.TabIndex = 30;
+            this.Correo.TabIndex = 5;
             this.Correo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Correo_KeyPress);
             this.Correo.Leave += new System.EventHandler(this.Correo_Leave);
             // 
             // Nombre
@@ -270,18 +274,18 @@
             this.Nombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Nombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Nombre.ForeColor = System.Drawing.Color.White;
-            this.Nombre.HintForeColor = System.Drawing.Color.Empty;
+            this.Nombre.HintForeColor = System.Drawing.Color.White;
             this.Nombre.HintText = "";
             this.Nombre.isPassword = false;
-            this.Nombre.LineFocusedColor = System.Drawing.Color.Blue;
+            this.Nombre.LineFocusedColor = System.Drawing.Color.Transparent;
             this.Nombre.LineIdleColor = System.Drawing.Color.Transparent;
-            this.Nombre.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.Nombre.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.Nombre.LineThickness = 3;
             this.Nombre.Location = new System.Drawing.Point(165, 112);
             this.Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(278, 37);
-            this.Nombre.TabIndex = 29;
+            this.Nombre.TabIndex = 1;
             this.Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nombre_KeyPress);
             this.Nombre.Leave += new System.EventHandler(this.Nombre_Leave);
@@ -292,18 +296,18 @@
             this.Documento.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Documento.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Documento.ForeColor = System.Drawing.Color.White;
-            this.Documento.HintForeColor = System.Drawing.Color.Empty;
+            this.Documento.HintForeColor = System.Drawing.Color.White;
             this.Documento.HintText = "";
             this.Documento.isPassword = false;
-            this.Documento.LineFocusedColor = System.Drawing.Color.Blue;
+            this.Documento.LineFocusedColor = System.Drawing.Color.Transparent;
             this.Documento.LineIdleColor = System.Drawing.Color.Transparent;
-            this.Documento.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.Documento.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.Documento.LineThickness = 3;
             this.Documento.Location = new System.Drawing.Point(165, 43);
             this.Documento.Margin = new System.Windows.Forms.Padding(4);
             this.Documento.Name = "Documento";
             this.Documento.Size = new System.Drawing.Size(278, 37);
-            this.Documento.TabIndex = 28;
+            this.Documento.TabIndex = 0;
             this.Documento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Documento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Documento_KeyPress);
             this.Documento.Leave += new System.EventHandler(this.Documento_Leave);
@@ -325,7 +329,7 @@
             this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAccion.BorderRadius = 0;
-            this.btnAccion.ButtonText = "Aceptar";
+            this.btnAccion.ButtonText = "    Aceptar";
             this.btnAccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccion.DisabledColor = System.Drawing.Color.Gray;
             this.btnAccion.Iconcolor = System.Drawing.Color.Transparent;
@@ -338,17 +342,17 @@
             this.btnAccion.IconRightVisible = true;
             this.btnAccion.IconRightZoom = 0D;
             this.btnAccion.IconVisible = true;
-            this.btnAccion.IconZoom = 90D;
+            this.btnAccion.IconZoom = 70D;
             this.btnAccion.IsTab = false;
-            this.btnAccion.Location = new System.Drawing.Point(337, 504);
+            this.btnAccion.Location = new System.Drawing.Point(46, 504);
             this.btnAccion.Name = "btnAccion";
             this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnAccion.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAccion.selected = false;
-            this.btnAccion.Size = new System.Drawing.Size(117, 29);
-            this.btnAccion.TabIndex = 21;
-            this.btnAccion.Text = "Aceptar";
+            this.btnAccion.Size = new System.Drawing.Size(118, 29);
+            this.btnAccion.TabIndex = 8;
+            this.btnAccion.Text = "    Aceptar";
             this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccion.Textcolor = System.Drawing.Color.White;
             this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,7 +382,7 @@
             this.CBOCiudad.Location = new System.Drawing.Point(165, 447);
             this.CBOCiudad.Name = "CBOCiudad";
             this.CBOCiudad.Size = new System.Drawing.Size(278, 24);
-            this.CBOCiudad.TabIndex = 13;
+            this.CBOCiudad.TabIndex = 7;
             // 
             // bunifuCustomLabel8
             // 
