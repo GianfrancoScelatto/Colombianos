@@ -74,12 +74,6 @@ namespace CU
             }
         }
 
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            RContrasena = new RecuperarContraseña();
-            RContrasena.Show();
-        }
-
         private void PbMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;

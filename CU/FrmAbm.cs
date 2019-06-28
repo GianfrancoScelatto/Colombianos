@@ -16,6 +16,7 @@ namespace CU
         public Cliente cliente;
         public Ciudad ciudad;
         public bool bandera;
+        public DateTime fechalimpia = DateTime.Parse("12-31-2001");
         int _dni;
         public FrmAbm(int dni)
         {
@@ -79,7 +80,7 @@ namespace CU
             Documento.ResetText();
             Nombre.ResetText();
             rbtnM.Checked = true;
-            Fecha.Value = DateTime.Now;
+            Fecha.Value = fechalimpia;
             Correo.ResetText();
             Address.ResetText();
         }

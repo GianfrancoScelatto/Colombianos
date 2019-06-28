@@ -15,6 +15,7 @@ namespace CU
     {
         public FrmAbm formulario;
         public Cliente cliente;
+        public DateTime fechalimpia = DateTime.Parse("12-31-2001");
         public int dni;
         public Menu()
         {
@@ -95,7 +96,7 @@ namespace CU
             formulario.Documento.ResetText();
             formulario.Nombre.ResetText();
             formulario.rbtnM.Checked = true;
-            formulario.Fecha.Value = DateTime.Now;
+            formulario.Fecha.Value = fechalimpia;
             formulario.Correo.ResetText();
             formulario.Address.ResetText();
             formulario.Show();

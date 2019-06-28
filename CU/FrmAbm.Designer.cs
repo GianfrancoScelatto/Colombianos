@@ -173,7 +173,7 @@
             this.btnCancelar.IconRightVisible = true;
             this.btnCancelar.IconRightZoom = 0D;
             this.btnCancelar.IconVisible = true;
-            this.btnCancelar.IconZoom = 70D;
+            this.btnCancelar.IconZoom = 50D;
             this.btnCancelar.IsTab = false;
             this.btnCancelar.Location = new System.Drawing.Point(325, 504);
             this.btnCancelar.Name = "btnCancelar";
@@ -342,7 +342,7 @@
             this.btnAccion.IconRightVisible = true;
             this.btnAccion.IconRightZoom = 0D;
             this.btnAccion.IconVisible = true;
-            this.btnAccion.IconZoom = 70D;
+            this.btnAccion.IconZoom = 50D;
             this.btnAccion.IsTab = false;
             this.btnAccion.Location = new System.Drawing.Point(46, 504);
             this.btnAccion.Name = "btnAccion";

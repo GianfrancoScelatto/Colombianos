@@ -32,7 +32,7 @@ namespace CU
 
             foreach (var x in l)
             {
-                txtPreg.Text = x.pregunta.Descripcion ;
+                txtPreg.Text = x.pregunta.Descripcion;
                 resp = x.Respuesta;
                 _user.Nick = x.Nick;
                 _user.Mail = x.Mail;
@@ -54,26 +54,6 @@ namespace CU
             CargarUsuario();
         }
 
-        private void bttnAceptar_Click(object sender, EventArgs e)
-        {
-            if (txtResp.Text == resp)
-            {
-                _user.Contraseña = b.Text;
-                _user.UsuarioAccion( _user, "EDITAR");
-                MessageBox.Show("editado");
-            }
-        }
-
-        private void txtNickEmail_TextChanged(object sender, EventArgs e)
-        {
-            CargarUsuario();
-
-            if (txtMailNick.Text == "")
-            {
-                txtPreg.ResetText();
-            }
-        }
-
         private void TxtCFPass_Leave(object sender, EventArgs e)
         {
             if (b.Text != a.Text)
@@ -84,13 +64,6 @@ namespace CU
                 b.Focus();
             }
         }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Limpieza();
-        }
-
         private void PbCerrar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -100,6 +73,32 @@ namespace CU
         private void PbMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void TxtMailNick_OnValueChanged(object sender, EventArgs e)
+        {
+            CargarUsuario();
+
+            if (txtMailNick.Text == "")
+            {
+                txtPreg.ResetText();
+            }
+        }
+
+        private void BtnAccion_Click(object sender, EventArgs e)
+        {
+            if (txtResp.Text == resp)
+            {
+                _user.Contraseña = txtCFPass.Text;
+                _user.UsuarioAccion(_user, "EDITAR");
+                MessageBox.Show("editado");
+            }
+        }
+
+        private void BtnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Limpieza();
         }
     }
 }
