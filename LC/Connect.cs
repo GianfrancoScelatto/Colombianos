@@ -19,9 +19,9 @@ namespace LC
         {
             try
             {
-                _servidor = "DESKTOP-FBJATB7\\NEWMSSQLSERVER";
+                _servidor = "LAPTOP-8F009B90\\SQLEXPRESS";
                 _database = "colombia";
-                _usuario = "DESKTOP-FBJATB7\\kathe";
+                _usuario = "LAPTOP-8F009B90\\Gian";
                 _password = "";
 
             } //try

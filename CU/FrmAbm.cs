@@ -16,8 +16,8 @@ namespace CU
         public Cliente cliente;
         public Ciudad ciudad;
         public bool bandera;
-        public DateTime fechalimpia = DateTime.Parse("31-12-2001");
-        int _dni;
+        public DateTime fechalimpia = DateTime.Parse("12-31-2001");
+        int _dni, id;
         public FrmAbm(int dni)
         {
             _dni = dni;
@@ -45,10 +45,11 @@ namespace CU
                     {
                         rbtnM.Checked = true;
                     }
-                    Fecha.Text = x.FechaNacimiento.ToString("dd-MM-yyyy");
+                    Fecha.Text = x.FechaNacimiento.ToString("MM-dd-yyyy");
                     Correo.Text = x.Correo;
                     Address.Text = x.Direccion;
                     CBOCiudad.Text = x.ciudad.NombreCiudad;
+                    id = x.ID;
                 }
             }
         }
@@ -86,12 +87,29 @@ namespace CU
 
         private void BtnAccion_Click_1(object sender, EventArgs e)
         {
-            
             if (string.IsNullOrEmpty(Documento.Text) || string.IsNullOrEmpty(Nombre.Text) || string.IsNullOrEmpty(Address.Text) || string.IsNullOrEmpty(Correo.Text))
             {
                 MessageBox.Show("Debe completar todos los datos", "Datos incompletos", MessageBoxButtons.OK);
                 return;
             }
+
+            cliente.Documento = Convert.ToInt32(Documento.Text);
+            cliente.Nombre = Nombre.Text;
+
+            if (rbtnM.Checked == true)
+            {
+                cliente.Sexo = "Masculino";
+            }
+            else
+            {
+                cliente.Sexo = "Femenino";
+            }
+
+            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
+            cliente.Correo = Correo.Text;
+            cliente.Direccion = Address.Text;
+            cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
+            cliente.ID = id;
 
             if (bandera == true)
             {
