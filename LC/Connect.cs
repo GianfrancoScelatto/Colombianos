@@ -19,9 +19,9 @@ namespace LC
         {
             try
             {
-                _servidor = "LAPTOP-8F009B90\\SQLEXPRESS";
+                _servidor = "DESKTOP-FBJATB7\\NEWMSSQLSERVER";
                 _database = "colombia";
-                _usuario = "LAPTOP-8F009B90\\Gian";
+                _usuario = "DESKTOP-FBJATB7\\kathe";
                 _password = "";
 
             } //try
@@ -29,9 +29,6 @@ namespace LC
             {
                 MessageBox.Show(String.Concat(e.Message, e.StackTrace), "");
             }//catch
-
-
-
 
         }//Conectar
         public SqlConnection Abrir()

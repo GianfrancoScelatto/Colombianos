@@ -9,6 +9,7 @@ namespace LC
 {
     public class Usuario
     {
+        #region propiedades y constructor 
         public string Nick { get; set; }
         public string Mail { get; set; }
         public string Contraseña { get; set; }
@@ -21,8 +22,10 @@ namespace LC
         {
             pregunta = new Pregunta();
         }
+        #endregion
 
-        public List<Usuario> ListarUser(String cadena)
+        #region Métodos
+        public List<Usuario> ListarUsuario(string cadena)
         {
             var conexion = new SqlConnection();
             var comando = new SqlCommand();
@@ -69,7 +72,7 @@ namespace LC
             return Lista;
 
         }
-
+        //Devuelve una lista de usuarios a partir del nick o email 
         public bool UsuarioAccion(Usuario usuario, string ejecutar)
         {
             var conn = new SqlConnection();
@@ -111,6 +114,8 @@ namespace LC
             return rta;
 
         }
+        //Se da de alta, actualiza o borra un usuario 
 
+        #endregion
     }
 }

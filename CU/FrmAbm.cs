@@ -16,7 +16,7 @@ namespace CU
         public Cliente cliente;
         public Ciudad ciudad;
         public bool bandera;
-        public DateTime fechalimpia = DateTime.Parse("12-31-2001");
+        public DateTime fechalimpia = DateTime.Parse("31-12-2001");
         int _dni;
         public FrmAbm(int dni)
         {
@@ -32,7 +32,7 @@ namespace CU
             }
             else
             {
-                var Registro = cliente.ListDoc(_dni);
+                var Registro = cliente.ListarDocumento(_dni);
 
                 foreach (var x in Registro)
                 {
@@ -45,7 +45,7 @@ namespace CU
                     }
                     else cliente.Sexo = "Femenino";
 
-                    Fecha.Text = x.FechaNacimiento.ToString("MM-dd-yyyy");
+                    Fecha.Text = x.FechaNacimiento.ToString("dd-MM-yyyy");
                     Correo.Text = x.Correo;
                     Address.Text = x.Direccion;
                     CBOCiudad.Text = x.ciudad.NombreCiudad;
@@ -102,7 +102,7 @@ namespace CU
             }
             else cliente.Sexo = "Femenino";
 
-            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("MM-dd-yyyy"));
+            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("dd-MM-yyyy"));
             cliente.Correo = Correo.Text;
             cliente.Direccion = Address.Text;
             cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);

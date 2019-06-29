@@ -15,7 +15,7 @@ namespace CU
     {
         public FrmAbm formulario;
         public Cliente cliente;
-        public DateTime fechalimpia = DateTime.Parse("12-31-2001");
+        public DateTime fechalimpia = DateTime.Parse("31-12-2001");
         public int dni;
         public Menu()
         {
@@ -34,13 +34,13 @@ namespace CU
         {
             Grilla.Rows.Clear();
             var cadena = Buscartxt.Text.ToString();
-            var l = cliente.Listar(cadena);
-
+            var l = cliente.ListarNombre(cadena);
             foreach (var x in l)
             {
-                Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("MM-dd-yyyy"), x.Correo,
+                Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("dd--MM-yyyy"), x.Correo,
                                 x.Direccion, x.ciudad.NombreCiudad);
             }
+            
         }
 
         private void PbMaximizar_Click(object sender, EventArgs e)
@@ -70,6 +70,7 @@ namespace CU
         private void Buscar_TextChanged(object sender, EventArgs e)
         {
             CargarGrilla();
+          
         }
 
         private void BunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)

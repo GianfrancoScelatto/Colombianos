@@ -28,7 +28,7 @@ namespace CU
         public void CargarUsuario()
         {
             var cadena = txtMailNick.Text;
-            var l = _user.ListarUser(cadena);
+            var l = _user.ListarUsuario(cadena);
 
             foreach (var x in l)
             {

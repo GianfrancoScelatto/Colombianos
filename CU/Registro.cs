@@ -93,7 +93,7 @@ namespace CU
         public void CheckNick()
         {
             var cadena = txtNick.Text;
-            var l = usuario.ListarUser(cadena);
+            var l = usuario.ListarUsuario(cadena);
 
             foreach (var x in l)
             {
@@ -104,7 +104,7 @@ namespace CU
         public void CheckMail()
         {
             var cadena = txtMail.Text;
-            var l = usuario.ListarUser(cadena);
+            var l = usuario.ListarUsuario(cadena);
 
             foreach (var x in l)
             {

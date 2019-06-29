@@ -43,12 +43,12 @@ namespace LC
                 {
                     conn.Close();
                     conn.Dispose();
-
                 }
 
             }
 
             return rta;
         }
+        // Se cargan los comboBox con 2 campos 
     }
 }
