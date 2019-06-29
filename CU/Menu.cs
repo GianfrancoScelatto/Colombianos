@@ -37,8 +37,8 @@ namespace CU
             var l = cliente.ListarNombre(cadena);
             foreach (var x in l)
             {
-                Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("dd--MM-yyyy"), x.Correo,
-                                x.Direccion, x.ciudad.NombreCiudad);
+                Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("dd--MM-yyyy"), 
+                x.Correo,x.Direccion, x.ciudad.NombreCiudad);
             }
             
         }
@@ -88,20 +88,15 @@ namespace CU
             dni = cliente.Documento;
             formulario = new FrmAbm(dni);
             formulario.Show();
-            formulario.bandera = true;
+            formulario.bandera = true; // activamos la bandera del FrmAbm para indicarle que accion debe realizar con los datos del form
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            dni = 0;
             formulario = new FrmAbm(dni);
-            formulario.Documento.ResetText();
-            formulario.Nombre.ResetText();
-            formulario.rbtnM.Checked = true;
-            formulario.Fecha.Value = fechalimpia;
-            formulario.Correo.ResetText();
-            formulario.Address.ResetText();
             formulario.Show();
-            
+
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -110,12 +105,9 @@ namespace CU
             if (MessageBox.Show("¿Está seguro de eliminar este cliente?", "Borrar cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 cliente.Accion(cliente, "BAJA");
-                MessageBox.Show("El cliente ha sido borrado exitosamente");
             }
-
             if (Grilla.CurrentRow == null)
                 return;
-
             Grilla.Rows.Remove(Grilla.CurrentRow);
         }
 

@@ -33,18 +33,18 @@ namespace CU
             else
             {
                 var Registro = cliente.ListarDocumento(_dni);
-
                 foreach (var x in Registro)
                 {
                     Documento.Text = Convert.ToInt32(x.Documento.ToString()).ToString();
                     Nombre.Text = x.Nombre;
-
-                    if ((rbtnM.Checked) == true)
+                    if ((x.Sexo) == "Femenino")
                     {
-                        cliente.Sexo = "Masculino";
+                        rbtnF.Checked = true;
                     }
-                    else cliente.Sexo = "Femenino";
-
+                    else
+                    {
+                        rbtnM.Checked = true;
+                    }
                     Fecha.Text = x.FechaNacimiento.ToString("dd-MM-yyyy");
                     Correo.Text = x.Correo;
                     Address.Text = x.Direccion;
@@ -68,7 +68,6 @@ namespace CU
             WindowState = FormWindowState.Minimized;
         }
 
-
         private void PbCerrar_Click(object sender, EventArgs e)
         {
             Limpieza();
@@ -76,7 +75,7 @@ namespace CU
 
         private void Limpieza()
         {
-            this.Hide();
+            Hide();
             Documento.ResetText();
             Nombre.ResetText();
             rbtnM.Checked = true;
@@ -87,36 +86,21 @@ namespace CU
 
         private void BtnAccion_Click_1(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(Documento.Text) || string.IsNullOrEmpty(Nombre.Text) || string.IsNullOrEmpty(Address.Text) || string.IsNullOrEmpty(Correo.Text))
             {
                 MessageBox.Show("Debe completar todos los datos", "Datos incompletos", MessageBoxButtons.OK);
                 return;
             }
 
-            cliente.Documento = Convert.ToInt32(Documento.Text);
-            cliente.Nombre = Nombre.Text;
-
-            if ((rbtnM.Checked) == true)
-            {
-                cliente.Sexo = "Masculino";
-            }
-            else cliente.Sexo = "Femenino";
-
-            cliente.FechaNacimiento = Convert.ToDateTime(Fecha.Value.Date.ToString("dd-MM-yyyy"));
-            cliente.Correo = Correo.Text;
-            cliente.Direccion = Address.Text;
-            cliente.CodigoCiudad = Convert.ToInt32(((DataRowView)CBOCiudad.SelectedItem)["CodigoCiudad"]);
-
             if (bandera == true)
             {
                 cliente.Accion(cliente, "UPDATE");
-                MessageBox.Show("¡Cliente actualizado con éxito!", "Actualizar cliente", MessageBoxButtons.OK);
                 bandera = false;
             }
             else
             {
                 cliente.Accion(cliente, "ALTA");
-                MessageBox.Show("¡Cliente nuevo ingresado con éxito!", "Crear cliente", MessageBoxButtons.OK);
             }
         }
         private void Correo_Leave(object sender, EventArgs e)

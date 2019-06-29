@@ -12,8 +12,8 @@ namespace LC
     {
         public string _servidor;
         public string _database;
-        public string _usuario;//si posee usuario y contrasena el sql server
-        public string _password;//si posee usuario y contrasena el sql server
+        public string _usuario;
+        public string _password;
         public static string Cadena;
         public Connect()
         {

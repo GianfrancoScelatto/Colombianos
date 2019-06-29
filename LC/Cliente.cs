@@ -44,14 +44,17 @@ namespace LC
                 if (ejecutar == "ALTA")
                 {
                     comando.CommandText = "Insert into BaseClientes (DocumentoCliente, NombreCliente, Sexo, FechaNac, CorreoCliente, DireccionCliente, CodigoCiudad ) values (" + _Cliente.Documento + ",'" + _Cliente.Nombre + "','" + _Cliente.Sexo + "','" + _Cliente.FechaNacimiento + "','" + _Cliente.Correo + "','" + _Cliente.Direccion + "'," + _Cliente.CodigoCiudad + ")";
+                    MessageBox.Show("¡Cliente nuevo ingresado con éxito!", "Crear cliente", MessageBoxButtons.OK);
                 }
                 else if (ejecutar == "BAJA")
                 {
                     comando.CommandText = "DELETE BaseClientes WHERE DocumentoCliente=" + _Cliente.Documento;
+                    MessageBox.Show("El cliente ha sido borrado exitosamente");
                 }
                 else
                 {
                     comando.CommandText = "UPDATE BaseClientes SET DocumentoCliente=" + _Cliente.Documento + ", NombreCliente='" + _Cliente.Nombre + "', Sexo='" + _Cliente.Sexo + "', FechaNac='" + _Cliente.FechaNacimiento + "', CorreoCliente='" + _Cliente.Correo + "', DireccionCliente='" + _Cliente.Direccion + "', CodigoCiudad=" + _Cliente.CodigoCiudad + " WHERE ID=" + _Cliente.ID;
+                    MessageBox.Show("¡Cliente actualizado con éxito!", "Actualizar cliente", MessageBoxButtons.OK);
                 }
 
 
