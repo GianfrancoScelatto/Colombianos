@@ -16,7 +16,6 @@ namespace CU
         public Cliente cliente;
         public Ciudad ciudad;
         public bool bandera;
-        public DateTime fechalimpia = DateTime.Parse("12-31-2001");
         int _dni, id;
         public FrmAbm(int dni)
         {
@@ -54,7 +53,7 @@ namespace CU
             }
         }
 
-        public bool validar(string correo)
+        public bool Validar(string correo)
         {
             return Regex.IsMatch(correo, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
         }
@@ -76,13 +75,8 @@ namespace CU
 
         private void Limpieza()
         {
+            _dni = 0;
             Hide();
-            Documento.ResetText();
-            Nombre.ResetText();
-            rbtnM.Checked = true;
-            Fecha.Value = fechalimpia;
-            Correo.ResetText();
-            Address.ResetText();
         }
 
         private void BtnAccion_Click_1(object sender, EventArgs e)
@@ -114,11 +108,23 @@ namespace CU
             if (bandera == true)
             {
                 cliente.Accion(cliente, "UPDATE");
-                bandera = false;
+                Limpieza();
             }
             else
             {
                 cliente.Accion(cliente, "ALTA");
+                DialogResult result = MessageBox.Show("¿Desea agregar otro cliente?", "Clientes", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    _dni = 0;
+                }
+                else if (result == DialogResult.No)
+                {
+                    _dni = 0;
+                    Hide();
+                }
+
+                bandera = false;
             }
         }
         private void Correo_Leave(object sender, EventArgs e)
@@ -128,7 +134,7 @@ namespace CU
                 MessageBox.Show("Este campo es obligatorio");
             }
 
-            if (validar(Correo.Text) == false)
+            if (Validar(Correo.Text) == false)
             {
                 MessageBox.Show("No válido");
                 Correo.Focus();

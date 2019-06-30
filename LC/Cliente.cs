@@ -51,7 +51,7 @@ namespace LC
                     comando.CommandText = "DELETE BaseClientes WHERE DocumentoCliente=" + _Cliente.Documento;
                     MessageBox.Show("El cliente ha sido borrado exitosamente");
                 }
-                else
+                else if (ejecutar == "UPDATE")
                 {
                     comando.CommandText = "UPDATE BaseClientes SET DocumentoCliente=" + _Cliente.Documento + ", NombreCliente='" + _Cliente.Nombre + "', Sexo='" + _Cliente.Sexo + "', FechaNac='" + _Cliente.FechaNacimiento + "', CorreoCliente='" + _Cliente.Correo + "', DireccionCliente='" + _Cliente.Direccion + "', CodigoCiudad=" + _Cliente.CodigoCiudad + " WHERE ID=" + _Cliente.ID;
                     MessageBox.Show("¡Cliente actualizado con éxito!", "Actualizar cliente", MessageBoxButtons.OK);

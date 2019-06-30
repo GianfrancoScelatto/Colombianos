@@ -18,7 +18,7 @@ namespace CU
         public int dni;
         public Menu()
         {
-            formulario = new FrmAbm(dni);
+            FrmAbm formulario = new FrmAbm(dni);
             cliente = new Cliente();
 
             InitializeComponent();
@@ -68,8 +68,7 @@ namespace CU
 
         private void Buscar_TextChanged(object sender, EventArgs e)
         {
-            CargarGrilla();
-          
+            CargarGrilla();          
         }
 
         private void BunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
@@ -85,17 +84,16 @@ namespace CU
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             dni = cliente.Documento;
-            formulario = new FrmAbm(dni);
-            formulario.Show();
+            FrmAbm formulario = new FrmAbm(dni);
+            formulario.ShowDialog();
             formulario.bandera = true; // activamos la bandera del FrmAbm para indicarle que accion debe realizar con los datos del form
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             dni = 0;
-            formulario = new FrmAbm(dni);
-            formulario.Show();
-
+            FrmAbm formulario = new FrmAbm(dni);
+            formulario.ShowDialog();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -113,8 +111,8 @@ namespace CU
         private void Grilla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             dni = Convert.ToInt32(Grilla.Rows[e.RowIndex].Cells[1].Value.ToString());
-            formulario = new FrmAbm(dni);
-            formulario.Show();
+            FrmAbm formulario = new FrmAbm(dni);
+            formulario.ShowDialog();
             formulario.bandera = true;
         }
     }
