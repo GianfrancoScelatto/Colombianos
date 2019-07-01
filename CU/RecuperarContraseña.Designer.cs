@@ -115,7 +115,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(491, 355);
+            this.panel2.Size = new System.Drawing.Size(491, 423);
             this.panel2.TabIndex = 14;
             // 
             // bunifuGradientPanel1
@@ -142,7 +142,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(491, 355);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(491, 423);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
             // btnCancelar
@@ -167,7 +167,7 @@
             this.btnCancelar.IconVisible = true;
             this.btnCancelar.IconZoom = 50D;
             this.btnCancelar.IsTab = false;
-            this.btnCancelar.Location = new System.Drawing.Point(283, 295);
+            this.btnCancelar.Location = new System.Drawing.Point(331, 344);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnCancelar.OnHovercolor = System.Drawing.Color.Red;
@@ -203,7 +203,7 @@
             this.btnAccion.IconVisible = true;
             this.btnAccion.IconZoom = 50D;
             this.btnAccion.IsTab = false;
-            this.btnAccion.Location = new System.Drawing.Point(71, 295);
+            this.btnAccion.Location = new System.Drawing.Point(59, 344);
             this.btnAccion.Name = "btnAccion";
             this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -347,7 +347,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 400);
+            this.ClientSize = new System.Drawing.Size(491, 468);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

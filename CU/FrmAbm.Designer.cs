@@ -266,7 +266,7 @@
             this.rbtnF.AutoSize = true;
             this.rbtnF.BackColor = System.Drawing.Color.Transparent;
             this.rbtnF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.rbtnF.Location = new System.Drawing.Point(315, 184);
+            this.rbtnF.Location = new System.Drawing.Point(299, 184);
             this.rbtnF.Name = "rbtnF";
             this.rbtnF.Size = new System.Drawing.Size(105, 23);
             this.rbtnF.TabIndex = 3;
@@ -289,11 +289,11 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(165, 268);
+            this.dtpFecha.Location = new System.Drawing.Point(188, 268);
             this.dtpFecha.MaxDate = new System.DateTime(2001, 12, 31, 0, 0, 0, 0);
             this.dtpFecha.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(278, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(216, 20);
             this.dtpFecha.TabIndex = 4;
             this.dtpFecha.Value = new System.DateTime(2001, 12, 31, 0, 0, 0, 0);
             // 
@@ -365,9 +365,9 @@
             this.CBOCiudad.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.CBOCiudad.ForeColor = System.Drawing.Color.White;
             this.CBOCiudad.FormattingEnabled = true;
-            this.CBOCiudad.Location = new System.Drawing.Point(165, 447);
+            this.CBOCiudad.Location = new System.Drawing.Point(188, 447);
             this.CBOCiudad.Name = "CBOCiudad";
-            this.CBOCiudad.Size = new System.Drawing.Size(278, 24);
+            this.CBOCiudad.Size = new System.Drawing.Size(216, 24);
             this.CBOCiudad.TabIndex = 7;
             // 
             // bunifuCustomLabel8
@@ -459,7 +459,6 @@
             this.Name = "FrmAbm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Formulario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

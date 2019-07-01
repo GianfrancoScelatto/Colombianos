@@ -20,7 +20,7 @@ namespace CU
         public Menu()
         {
             login = new Login();
-            FrmAbm formulario = new FrmAbm(dni);
+            formulario = new FrmAbm(dni);
             cliente = new Cliente();
             InitializeComponent();
         }
@@ -64,35 +64,31 @@ namespace CU
                 }
             }
         }
-
+        // Se verifica dentro de los condicionales que dependiendo del tipo de dato ingresado se actualice la grilla 
+        
         private void PbMaximizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
-            pbMaximizar.Visible = false;
-            pbRestaurar.Visible = true;
         }
+        //Boton de maximizar
 
         private void PbCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void PbRestaurar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Normal;
-            pbMaximizar.Visible = true;
-            pbRestaurar.Visible = false;
-        }
-
+        //Se cierra la aplicacion definitivamente
+       
         private void PbMinimizar_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
+        //Minimizacion de la aplicacion
 
         private void Buscar_TextChanged(object sender, EventArgs e)
         {
             CargarGrilla();          
         }
+        //Carga la grilla segun lo que reciva el buscador
 
         private void BunifuCustomDataGrid1_SelectionChanged(object sender, EventArgs e)
         {
@@ -103,6 +99,7 @@ namespace CU
 
             cliente.Documento = Convert.ToInt32(Grilla.CurrentRow.Cells["Documento"].Value);
         }
+        //Selecciona el documento del cliente donde este posicionada la fila  
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
@@ -112,6 +109,7 @@ namespace CU
             formulario.ShowDialog();
           
         }
+        //Se abre el formulario FrmAbm con los datos del cliente seleccionado en la grilla
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -120,6 +118,7 @@ namespace CU
             formulario.bandera = false;
             formulario.ShowDialog();           
         }
+        //Se abre un formulario sin datos dentro del mismo
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
@@ -133,6 +132,7 @@ namespace CU
 
             Grilla.Rows.Remove(Grilla.CurrentRow);
         }
+        //Se borra directamente el cliente seleccionado en la grilla
 
         private void Grilla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -141,6 +141,7 @@ namespace CU
             formulario.bandera = true;
             formulario.ShowDialog();           
         }
+        //Al hacer doble clic en un cliente se abre un formulario para poder actualizarlo
 
         private void Buscartxt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -163,16 +164,33 @@ namespace CU
                 }
             }
         }
+        //Se valida que no ingresen datos que no correspondan al Buscador dependiendo del radioButton seleccionado
 
         private void LkLblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
             login.Show();
         }
+        //Cierra el menu principal para que otro usuario pueda ingresar
 
         private void Menu_Activated(object sender, EventArgs e)
         {
             CargarGrilla();
         }
+        /* Lo utilizamos para cargar la grilla cuando esta este visible o activada recargando asi los datos ingresados 
+         * object modificados de los clientes
+         */
+        private void RbtnBuscDNI_Click(object sender, EventArgs e)
+        {
+            Buscartxt.Clear();
+        }
+        /* Ref001 = Para evitar que los campos queden cargados a la hora de cargarlagrilla con datos que no corresponden al tipo 
+         * que se esta buscando en el textBox del buscadr se vacian cuando el usuario le da click a los radiosButton
+         */
+        private void RbtnBuscNombre_Click(object sender, EventArgs e)
+        {
+            Buscartxt.Clear();
+        }
+        //Leer Ref001
     }
 }

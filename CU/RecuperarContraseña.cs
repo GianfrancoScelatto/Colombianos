@@ -51,7 +51,6 @@ namespace CU
                 resp = x.Respuesta;
                 _user.Nick = x.Nick;
                 _user.Mail = x.Mail;
-                
                 _user.IDPregunta = x.IDPregunta;
                 _user.Respuesta = x.Respuesta;
             }
