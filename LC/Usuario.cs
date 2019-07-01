@@ -87,11 +87,13 @@ namespace LC
                 if (ejecutar == "ALTA")
                 {
                     comando.CommandText = "Insert into Cuenta (nickname, email, contraseña, FK_ID_Pregunta, Respuesta ) values ('" + usuario.Nick + "','" + usuario.Mail + "','" + usuario.Contraseña + "','" + usuario.IDPregunta + "','" + usuario.Respuesta + "')";
+                    MessageBox.Show("¡Usuario registrado con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 else if (ejecutar == "EDITAR")
                 {
                     comando.CommandText = "UPDATE Cuenta SET contraseña='" + usuario.Contraseña + "' WHERE nickname='" + usuario.Nick + "'";
+                    MessageBox.Show("Actualización realizada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 comando.ExecuteNonQuery();

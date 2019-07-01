@@ -29,6 +29,46 @@ namespace CU
             InitializeComponent();
         }
 
+        private void IntentarLogear()
+        {
+            intentos += 0;
+
+            var conexion = new SqlConnection();
+            var comando = new SqlCommand();
+            var BaseDeDatos = new Connect();
+            conexion = BaseDeDatos.Abrir();
+            comando.Connection = conexion;
+            comando.CommandText = "SELECT nickname, email, contraseña FROM Cuenta WHERE nickname='" + txtuser.Text + "' or email='" + txtuser.Text + "' and contraseña='" + user.Contraseña + "'";
+            var rdr = comando.ExecuteReader();
+            var reg = new Usuario();
+
+            while (rdr != null && rdr.Read())
+            {
+                reg.Nick = (string)rdr["nickname"];
+                reg.Mail = (string)rdr["email"];
+                reg.Contraseña = (string)rdr["contraseña"];
+            }
+
+            if (reg.Mail == txtuser.Text || reg.Nick == txtuser.Text && reg.Contraseña == txtPass.Text)
+            {
+                txtuser.Clear();
+                txtPass.Clear();
+                Hide();
+                MenuL = new Menu();
+                MenuL.Show();
+                MenuL.lblUser.Text = "¡Bienvenido " + reg.Nick + "!";
+            }
+            else if (intentos == 3)
+            {
+                MessageBox.Show("Si se ha olvidado la contraseña, intente restaurarla.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                intentos += 1;
+                MessageBox.Show("Error de autenticación, verifique usuario y/o contraseña.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -104,44 +144,14 @@ namespace CU
 
         private void BtnLog_Click_1(object sender, EventArgs e)
         {
-            intentos += 0;
+            IntentarLogear();
+        }
 
-            var conexion = new SqlConnection();
-            var comando = new SqlCommand();
-            var BaseDeDatos = new Connect();
-            conexion = BaseDeDatos.Abrir();
-            comando.Connection = conexion;
-            comando.CommandText = "SELECT nickname, email, contraseña FROM Cuenta WHERE nickname='" + txtuser.Text + "' or email='" + txtuser.Text + "' and contraseña='" + user.Contraseña + "'";
-            var rdr = comando.ExecuteReader();
-            var reg = new Usuario();
-
-            while (rdr != null && rdr.Read())
+        private void TxtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                reg.Nick = (string)rdr["nickname"];
-                reg.Mail = (string)rdr["email"];
-                reg.Contraseña = (string)rdr["contraseña"];
-            }
-
-            if (reg.Mail == txtuser.Text || reg.Nick == txtuser.Text && reg.Contraseña == txtPass.Text)
-            {
-                txtuser.Clear();
-                txtPass.Clear();
-                Hide();
-                MenuL = new Menu();
-                MenuL.Show();
-                MenuL.lblUser.Text = "¡Bienvenido " + reg.Nick + "!";
-            }
-            else if (intentos == 3)
-            {
-                MessageBox.Show("Ha alcanzado el nivel máximo de intentos, por favor vuelva a intentarlo.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
-            else
-            {
-                intentos += 1;
-                MessageBox.Show("Error de autenticación, verifique usuario y/o contraseña o es posible que su cuenta esté inhabilitada.", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtPass.Text = "";
-
+                IntentarLogear();
             }
         }
     }

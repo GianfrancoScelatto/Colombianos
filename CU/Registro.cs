@@ -14,8 +14,7 @@ namespace CU
     public partial class Registro : Form
     {
         public Usuario usuario;
-        public string nick;
-        public string mail;
+        public string nick, mail;
         public Registro()
         {
             usuario = new Usuario();
@@ -33,7 +32,7 @@ namespace CU
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void BtnAccion_Click(object sender, EventArgs e)
         {
             if (txtMail.Text == "" || txtNick.Text == "" || txtPass.Text == "" || txtCFPass.Text == "" || txtRespuesta.Text == "")
             {
@@ -45,10 +44,9 @@ namespace CU
             usuario.Contraseña = txtCFPass.Text;
             usuario.Respuesta = txtRespuesta.Text;
             usuario.UsuarioAccion(usuario, "ALTA");
-            MessageBox.Show("¡Usuario registrado con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Limpieza();
         }
-        public bool validar(string correo)
+        public bool Validar(string correo)
         {
             return Regex.IsMatch(correo, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
         }
@@ -58,20 +56,31 @@ namespace CU
             this.Hide();
             txtNick.ResetText();
             txtMail.ResetText();
-            txtContraseña.ResetText();
-            txtConfContraseña.ResetText();
+            txtPass.ResetText();
+            txtCFPass.ResetText();
             txtRespuesta.ResetText();
         }
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            Limpieza();
+            if (MessageBox.Show("¿Está seguro que desea cancelar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                Limpieza();
+            }
+            else
+                return;
         }
 
         private void TxtNick_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (!(char.IsNumber(e.KeyChar))) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("Solo se permiten letras y/o números.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
             if (!(e.KeyChar != (char)Keys.Space))
             {
-                MessageBox.Show("No se permiten espacios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se permiten espacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -80,7 +89,7 @@ namespace CU
         {
             if (txtPass.Text != txtCFPass.Text)
             {
-                MessageBox.Show("No coinciden las contraseñas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No coinciden las contraseñas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtPass.ResetText();
                 txtCFPass.ResetText();
                 txtPass.Focus();
@@ -125,7 +134,12 @@ namespace CU
 
             if (txtNick.Text == nick)
             {
-                MessageBox.Show("El usuario ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El usuario ya existe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNick.Focus();
+            }
+            if (txtNick.TextLength < 6)
+            {
+                MessageBox.Show("El usuario debe tener como mínimo 6 caracteres.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNick.Focus();
             }
         }
@@ -136,13 +150,13 @@ namespace CU
 
             if (txtMail.Text == mail)
             {
-                MessageBox.Show("El usuario ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El usuario ya existe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtMail.Focus();
             }
 
-            if (validar(txtMail.Text) == false)
+            if (Validar(txtMail.Text) == false)
             {
-                MessageBox.Show("Correo no válido");
+                MessageBox.Show("Este correo no es válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtMail.Focus();
             }
         }
@@ -159,6 +173,45 @@ namespace CU
             RealseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
+        }
+
+        private void TxtMail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("No se permiten espacios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TxtPass_Leave(object sender, EventArgs e)
+        {
+            if (txtPass.TextLength < 8)
+            {
+                MessageBox.Show("La contraseña debe tener 8 caracteres como mínimo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPass.Focus();
+            }
+        }
+
+        private void TxtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("No se permiten espacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TxtCFPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar != (char)Keys.Space))
+            {
+                MessageBox.Show("No se permiten espacios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

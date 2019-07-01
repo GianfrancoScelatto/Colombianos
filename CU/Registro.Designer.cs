@@ -35,20 +35,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAccion = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.txtRespuesta = new System.Windows.Forms.TextBox();
+            this.txtNick = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
             this.txtCFPass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.cmbBoxPreguntas = new System.Windows.Forms.ComboBox();
-            this.txtRespuesta = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.txtNick = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.btnCrear = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.txtMail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtContraseña = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtConfContraseña = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -125,20 +123,18 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnCancelar);
+            this.bunifuGradientPanel1.Controls.Add(this.btnAccion);
+            this.bunifuGradientPanel1.Controls.Add(this.txtRespuesta);
+            this.bunifuGradientPanel1.Controls.Add(this.txtNick);
+            this.bunifuGradientPanel1.Controls.Add(this.txtMail);
             this.bunifuGradientPanel1.Controls.Add(this.txtCFPass);
             this.bunifuGradientPanel1.Controls.Add(this.txtPass);
             this.bunifuGradientPanel1.Controls.Add(this.cmbBoxPreguntas);
-            this.bunifuGradientPanel1.Controls.Add(this.txtRespuesta);
-            this.bunifuGradientPanel1.Controls.Add(this.btnCancelar);
-            this.bunifuGradientPanel1.Controls.Add(this.txtNick);
-            this.bunifuGradientPanel1.Controls.Add(this.btnCrear);
-            this.bunifuGradientPanel1.Controls.Add(this.txtMail);
             this.bunifuGradientPanel1.Controls.Add(this.label5);
             this.bunifuGradientPanel1.Controls.Add(this.label6);
             this.bunifuGradientPanel1.Controls.Add(this.label3);
             this.bunifuGradientPanel1.Controls.Add(this.label4);
-            this.bunifuGradientPanel1.Controls.Add(this.txtContraseña);
-            this.bunifuGradientPanel1.Controls.Add(this.txtConfContraseña);
             this.bunifuGradientPanel1.Controls.Add(this.label2);
             this.bunifuGradientPanel1.Controls.Add(this.label7);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -152,73 +148,18 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(400, 455);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
-            // txtCFPass
-            // 
-            this.txtCFPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtCFPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCFPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCFPass.ForeColor = System.Drawing.Color.White;
-            this.txtCFPass.Location = new System.Drawing.Point(168, 217);
-            this.txtCFPass.Name = "txtCFPass";
-            this.txtCFPass.PasswordChar = '•';
-            this.txtCFPass.Size = new System.Drawing.Size(210, 22);
-            this.txtCFPass.TabIndex = 3;
-            this.txtCFPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCFPass.Leave += new System.EventHandler(this.TxtCFPass_Leave);
-            // 
-            // txtPass
-            // 
-            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.White;
-            this.txtPass.Location = new System.Drawing.Point(167, 154);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '•';
-            this.txtPass.Size = new System.Drawing.Size(210, 22);
-            this.txtPass.TabIndex = 2;
-            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cmbBoxPreguntas
-            // 
-            this.cmbBoxPreguntas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxPreguntas.FormattingEnabled = true;
-            this.cmbBoxPreguntas.Location = new System.Drawing.Point(167, 273);
-            this.cmbBoxPreguntas.Name = "cmbBoxPreguntas";
-            this.cmbBoxPreguntas.Size = new System.Drawing.Size(211, 21);
-            this.cmbBoxPreguntas.TabIndex = 4;
-            // 
-            // txtRespuesta
-            // 
-            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtRespuesta.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRespuesta.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtRespuesta.ForeColor = System.Drawing.Color.White;
-            this.txtRespuesta.HintForeColor = System.Drawing.Color.White;
-            this.txtRespuesta.HintText = "";
-            this.txtRespuesta.isPassword = false;
-            this.txtRespuesta.LineFocusedColor = System.Drawing.Color.Transparent;
-            this.txtRespuesta.LineIdleColor = System.Drawing.Color.Transparent;
-            this.txtRespuesta.LineMouseHoverColor = System.Drawing.Color.Transparent;
-            this.txtRespuesta.LineThickness = 3;
-            this.txtRespuesta.Location = new System.Drawing.Point(167, 320);
-            this.txtRespuesta.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(210, 33);
-            this.txtRespuesta.TabIndex = 5;
-            this.txtRespuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancelar.BorderRadius = 0;
+            this.btnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnCancelar.ButtonText = "Cancelar";
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
             this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Iconimage = null;
+            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
             this.btnCancelar.Iconimage_right = null;
             this.btnCancelar.Iconimage_right_Selected = null;
             this.btnCancelar.Iconimage_Selected = null;
@@ -227,106 +168,148 @@
             this.btnCancelar.IconRightVisible = true;
             this.btnCancelar.IconRightZoom = 0D;
             this.btnCancelar.IconVisible = true;
-            this.btnCancelar.IconZoom = 90D;
+            this.btnCancelar.IconZoom = 50D;
             this.btnCancelar.IsTab = false;
-            this.btnCancelar.Location = new System.Drawing.Point(29, 395);
+            this.btnCancelar.Location = new System.Drawing.Point(239, 385);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.Red;
             this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancelar.selected = false;
-            this.btnCancelar.Size = new System.Drawing.Size(149, 48);
-            this.btnCancelar.TabIndex = 47;
+            this.btnCancelar.Size = new System.Drawing.Size(136, 48);
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancelar.Textcolor = System.Drawing.Color.White;
             this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // btnAccion
+            // 
+            this.btnAccion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAccion.BorderRadius = 0;
+            this.btnAccion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnAccion.ButtonText = "    Aceptar";
+            this.btnAccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAccion.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAccion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAccion.Iconimage")));
+            this.btnAccion.Iconimage_right = null;
+            this.btnAccion.Iconimage_right_Selected = null;
+            this.btnAccion.Iconimage_Selected = null;
+            this.btnAccion.IconMarginLeft = 0;
+            this.btnAccion.IconMarginRight = 0;
+            this.btnAccion.IconRightVisible = true;
+            this.btnAccion.IconRightZoom = 0D;
+            this.btnAccion.IconVisible = true;
+            this.btnAccion.IconZoom = 50D;
+            this.btnAccion.IsTab = false;
+            this.btnAccion.Location = new System.Drawing.Point(27, 385);
+            this.btnAccion.Name = "btnAccion";
+            this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnAccion.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAccion.selected = false;
+            this.btnAccion.Size = new System.Drawing.Size(136, 48);
+            this.btnAccion.TabIndex = 6;
+            this.btnAccion.Text = "    Aceptar";
+            this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccion.Textcolor = System.Drawing.Color.White;
+            this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccion.Click += new System.EventHandler(this.BtnAccion_Click);
+            // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRespuesta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRespuesta.ForeColor = System.Drawing.Color.White;
+            this.txtRespuesta.Location = new System.Drawing.Point(159, 315);
+            this.txtRespuesta.MaxLength = 20;
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(216, 27);
+            this.txtRespuesta.TabIndex = 5;
+            this.txtRespuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtNick
             // 
             this.txtNick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtNick.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNick.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtNick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNick.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNick.ForeColor = System.Drawing.Color.White;
-            this.txtNick.HintForeColor = System.Drawing.Color.White;
-            this.txtNick.HintText = "";
-            this.txtNick.isPassword = false;
-            this.txtNick.LineFocusedColor = System.Drawing.Color.Transparent;
-            this.txtNick.LineIdleColor = System.Drawing.Color.Transparent;
-            this.txtNick.LineMouseHoverColor = System.Drawing.Color.Transparent;
-            this.txtNick.LineThickness = 3;
-            this.txtNick.Location = new System.Drawing.Point(167, 95);
-            this.txtNick.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNick.Location = new System.Drawing.Point(159, 95);
+            this.txtNick.MaxLength = 12;
             this.txtNick.Name = "txtNick";
-            this.txtNick.Size = new System.Drawing.Size(210, 33);
+            this.txtNick.Size = new System.Drawing.Size(216, 27);
             this.txtNick.TabIndex = 1;
             this.txtNick.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNick.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNick_KeyPress);
             this.txtNick.Leave += new System.EventHandler(this.txtNick_Leave);
             // 
-            // btnCrear
-            // 
-            this.btnCrear.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCrear.BorderRadius = 0;
-            this.btnCrear.ButtonText = "Crear Usuario";
-            this.btnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrear.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCrear.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCrear.Iconimage = null;
-            this.btnCrear.Iconimage_right = null;
-            this.btnCrear.Iconimage_right_Selected = null;
-            this.btnCrear.Iconimage_Selected = null;
-            this.btnCrear.IconMarginLeft = 0;
-            this.btnCrear.IconMarginRight = 0;
-            this.btnCrear.IconRightVisible = true;
-            this.btnCrear.IconRightZoom = 0D;
-            this.btnCrear.IconVisible = true;
-            this.btnCrear.IconZoom = 90D;
-            this.btnCrear.IsTab = false;
-            this.btnCrear.Location = new System.Drawing.Point(223, 395);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnCrear.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnCrear.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCrear.selected = false;
-            this.btnCrear.Size = new System.Drawing.Size(136, 48);
-            this.btnCrear.TabIndex = 44;
-            this.btnCrear.Text = "Crear Usuario";
-            this.btnCrear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCrear.Textcolor = System.Drawing.Color.White;
-            this.btnCrear.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrear.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
-            // 
             // txtMail
             // 
             this.txtMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMail.ForeColor = System.Drawing.Color.White;
-            this.txtMail.HintForeColor = System.Drawing.Color.White;
-            this.txtMail.HintText = "";
-            this.txtMail.isPassword = false;
-            this.txtMail.LineFocusedColor = System.Drawing.Color.Transparent;
-            this.txtMail.LineIdleColor = System.Drawing.Color.Transparent;
-            this.txtMail.LineMouseHoverColor = System.Drawing.Color.Transparent;
-            this.txtMail.LineThickness = 3;
-            this.txtMail.Location = new System.Drawing.Point(167, 39);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMail.Location = new System.Drawing.Point(159, 39);
+            this.txtMail.MaxLength = 30;
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(210, 33);
+            this.txtMail.Size = new System.Drawing.Size(216, 27);
             this.txtMail.TabIndex = 0;
             this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMail_KeyPress);
             this.txtMail.Leave += new System.EventHandler(this.txtMail_Leave);
+            // 
+            // txtCFPass
+            // 
+            this.txtCFPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtCFPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCFPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCFPass.ForeColor = System.Drawing.Color.White;
+            this.txtCFPass.Location = new System.Drawing.Point(159, 204);
+            this.txtCFPass.MaxLength = 16;
+            this.txtCFPass.Name = "txtCFPass";
+            this.txtCFPass.PasswordChar = '•';
+            this.txtCFPass.Size = new System.Drawing.Size(216, 29);
+            this.txtCFPass.TabIndex = 3;
+            this.txtCFPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCFPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCFPass_KeyPress);
+            this.txtCFPass.Leave += new System.EventHandler(this.TxtCFPass_Leave);
+            // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.Location = new System.Drawing.Point(159, 152);
+            this.txtPass.MaxLength = 16;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '•';
+            this.txtPass.Size = new System.Drawing.Size(216, 29);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPass_KeyPress);
+            this.txtPass.Leave += new System.EventHandler(this.TxtPass_Leave);
+            // 
+            // cmbBoxPreguntas
+            // 
+            this.cmbBoxPreguntas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxPreguntas.FormattingEnabled = true;
+            this.cmbBoxPreguntas.Location = new System.Drawing.Point(159, 262);
+            this.cmbBoxPreguntas.Name = "cmbBoxPreguntas";
+            this.cmbBoxPreguntas.Size = new System.Drawing.Size(217, 21);
+            this.cmbBoxPreguntas.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 334);
+            this.label5.Location = new System.Drawing.Point(23, 323);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 19);
             this.label5.TabIndex = 46;
@@ -337,7 +320,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 275);
+            this.label6.Location = new System.Drawing.Point(23, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 19);
             this.label6.TabIndex = 45;
@@ -348,7 +331,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 220);
+            this.label3.Location = new System.Drawing.Point(23, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 19);
             this.label3.TabIndex = 44;
@@ -359,60 +342,18 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 168);
+            this.label4.Location = new System.Drawing.Point(23, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 19);
             this.label4.TabIndex = 43;
             this.label4.Text = "Contraseña";
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContraseña.Enabled = false;
-            this.txtContraseña.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtContraseña.ForeColor = System.Drawing.Color.White;
-            this.txtContraseña.HintForeColor = System.Drawing.Color.White;
-            this.txtContraseña.HintText = "";
-            this.txtContraseña.isPassword = false;
-            this.txtContraseña.LineFocusedColor = System.Drawing.Color.Transparent;
-            this.txtContraseña.LineIdleColor = System.Drawing.Color.Transparent;
-            this.txtContraseña.LineMouseHoverColor = System.Drawing.Color.Transparent;
-            this.txtContraseña.LineThickness = 3;
-            this.txtContraseña.Location = new System.Drawing.Point(167, 154);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(210, 33);
-            this.txtContraseña.TabIndex = 41;
-            this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtConfContraseña
-            // 
-            this.txtConfContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtConfContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConfContraseña.Enabled = false;
-            this.txtConfContraseña.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtConfContraseña.ForeColor = System.Drawing.Color.White;
-            this.txtConfContraseña.HintForeColor = System.Drawing.Color.White;
-            this.txtConfContraseña.HintText = "";
-            this.txtConfContraseña.isPassword = false;
-            this.txtConfContraseña.LineFocusedColor = System.Drawing.Color.Transparent;
-            this.txtConfContraseña.LineIdleColor = System.Drawing.Color.Transparent;
-            this.txtConfContraseña.LineMouseHoverColor = System.Drawing.Color.Transparent;
-            this.txtConfContraseña.LineThickness = 3;
-            this.txtConfContraseña.Location = new System.Drawing.Point(167, 217);
-            this.txtConfContraseña.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConfContraseña.Name = "txtConfContraseña";
-            this.txtConfContraseña.Size = new System.Drawing.Size(210, 33);
-            this.txtConfContraseña.TabIndex = 42;
-            this.txtConfContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 109);
+            this.label2.Location = new System.Drawing.Point(23, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 19);
             this.label2.TabIndex = 33;
@@ -423,7 +364,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 53);
+            this.label7.Location = new System.Drawing.Point(25, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 19);
             this.label7.TabIndex = 32;
@@ -459,21 +400,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCrear;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRespuesta;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtConfContraseña;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtContraseña;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNick;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtMail;
         private System.Windows.Forms.ComboBox cmbBoxPreguntas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCancelar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCFPass;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtRespuesta;
+        private System.Windows.Forms.TextBox txtNick;
+        private System.Windows.Forms.TextBox txtMail;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancelar;
+        public Bunifu.Framework.UI.BunifuFlatButton btnAccion;
     }
 }

@@ -40,10 +40,10 @@
             this.passCheck = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LkLblRegistro = new System.Windows.Forms.LinkLabel();
+            this.btnLog = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label4 = new System.Windows.Forms.Label();
             this.LkLblPass = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnLog = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -164,6 +164,7 @@
             this.txtPass.TabIndex = 1;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPass_KeyDown);
             // 
             // passCheck
             // 
@@ -204,6 +205,42 @@
             this.LkLblRegistro.Text = "Registrarse";
             this.LkLblRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LkLblRegistro_LinkClicked);
             // 
+            // btnLog
+            // 
+            this.btnLog.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLog.BorderRadius = 0;
+            this.btnLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnLog.ButtonText = "Ingresar";
+            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLog.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLog.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLog.Iconimage = null;
+            this.btnLog.Iconimage_right = null;
+            this.btnLog.Iconimage_right_Selected = null;
+            this.btnLog.Iconimage_Selected = null;
+            this.btnLog.IconMarginLeft = 0;
+            this.btnLog.IconMarginRight = 0;
+            this.btnLog.IconRightVisible = true;
+            this.btnLog.IconRightZoom = 0D;
+            this.btnLog.IconVisible = true;
+            this.btnLog.IconZoom = 90D;
+            this.btnLog.IsTab = false;
+            this.btnLog.Location = new System.Drawing.Point(148, 254);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnLog.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLog.selected = false;
+            this.btnLog.Size = new System.Drawing.Size(97, 48);
+            this.btnLog.TabIndex = 2;
+            this.btnLog.Text = "Ingresar";
+            this.btnLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLog.Textcolor = System.Drawing.Color.White;
+            this.btnLog.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLog.Click += new System.EventHandler(this.BtnLog_Click_1);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -240,42 +277,6 @@
             this.label3.Size = new System.Drawing.Size(98, 19);
             this.label3.TabIndex = 21;
             this.label3.Text = "Contraseña";
-            // 
-            // btnLog
-            // 
-            this.btnLog.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLog.BorderRadius = 0;
-            this.btnLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnLog.ButtonText = "Ingresar";
-            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLog.DisabledColor = System.Drawing.Color.Gray;
-            this.btnLog.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnLog.Iconimage = null;
-            this.btnLog.Iconimage_right = null;
-            this.btnLog.Iconimage_right_Selected = null;
-            this.btnLog.Iconimage_Selected = null;
-            this.btnLog.IconMarginLeft = 0;
-            this.btnLog.IconMarginRight = 0;
-            this.btnLog.IconRightVisible = true;
-            this.btnLog.IconRightZoom = 0D;
-            this.btnLog.IconVisible = true;
-            this.btnLog.IconZoom = 90D;
-            this.btnLog.IsTab = false;
-            this.btnLog.Location = new System.Drawing.Point(148, 254);
-            this.btnLog.Name = "btnLog";
-            this.btnLog.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnLog.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnLog.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnLog.selected = false;
-            this.btnLog.Size = new System.Drawing.Size(97, 48);
-            this.btnLog.TabIndex = 2;
-            this.btnLog.Text = "Ingresar";
-            this.btnLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLog.Textcolor = System.Drawing.Color.White;
-            this.btnLog.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Click += new System.EventHandler(this.BtnLog_Click_1);
             // 
             // Login
             // 

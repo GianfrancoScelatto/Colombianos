@@ -145,7 +145,7 @@ namespace LC
         
         public List<Cliente> ListarNombre(string cadena)
         {
-            string comandoListar = "Select t1.*, t2.NombreCiudad " + " From BaseClientes as t1 " + " Inner Join BaseCiudades as t2 " + " On t1.CodigoCiudad = t2.CodigoCiudad " + "where NombreCliente like '%" + cadena + "%'" + " Order by t1.NombreCliente";
+            string comandoListar = "Select t1.*, t2.NombreCiudad " + " From BaseClientes as t1 " + " Inner Join BaseCiudades as t2 " + " On t1.CodigoCiudad = t2.CodigoCiudad " + "where NombreCliente like '%" + cadena + "%' or CorreoCliente='" + cadena + "' Order by t1.NombreCliente";
             var Lista = ComandoParaListar(comandoListar);
             return Lista;
         }
