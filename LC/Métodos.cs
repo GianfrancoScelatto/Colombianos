@@ -10,8 +10,6 @@ namespace LC
     
     public class Métodos
     {
-        
-
         public Métodos()
         {
     

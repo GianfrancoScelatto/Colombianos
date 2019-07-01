@@ -116,7 +116,7 @@ namespace LC
             return rta;
 
         }
-        //Se da de alta, actualiza o borra un usuario 
+        //Se da de alta o actualiza un usuario 
 
         #endregion
     }

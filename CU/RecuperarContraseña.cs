@@ -28,47 +28,13 @@ namespace CU
             _user = new Usuario();
             InitializeComponent();
         }
-        public void CheckNickMail()
-        {
-            var cadena = txtMailNick.Text;
-            var l = _user.ListarUsuario(cadena);
 
-            foreach (var x in l)
-            {
-                nick = x.Nick;
-                mail = x.Mail;
-            }
-        }
-
-        public void CargarUsuario()
-        {
-            var cadena = txtMailNick.Text;
-            var l = _user.ListarUsuario(cadena);
-
-            foreach (var x in l)
-            {
-                txtPreg.Text = x.pregunta.Descripcion;
-                resp = x.Respuesta;
-                _user.Nick = x.Nick;
-                _user.Mail = x.Mail;
-                _user.IDPregunta = x.IDPregunta;
-                _user.Respuesta = x.Respuesta;
-            }
-        }
-
+        #region Dll Import para mover formularios 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void RealseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-        public void Limpieza()
-        {
-            Hide();
-            txtMailNick.ResetText();
-            txtPass.ResetText();
-            txtCFPass.ResetText();
-            txtResp.ResetText();
-        }
+        #endregion
         private void RecuperarContraseña_Load_1(object sender, EventArgs e)
         {
 
@@ -162,6 +128,43 @@ namespace CU
                 MessageBox.Show("El usuario ingresado no existe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtMailNick.Focus();
             }
+        }
+
+        public void CheckNickMail()
+        {
+            var cadena = txtMailNick.Text;
+            var l = _user.ListarUsuario(cadena);
+
+            foreach (var x in l)
+            {
+                nick = x.Nick;
+                mail = x.Mail;
+            }
+        }
+
+        public void CargarUsuario()
+        {
+            var cadena = txtMailNick.Text;
+            var l = _user.ListarUsuario(cadena);
+
+            foreach (var x in l)
+            {
+                txtPreg.Text = x.pregunta.Descripcion;
+                resp = x.Respuesta;
+                _user.Nick = x.Nick;
+                _user.Mail = x.Mail;
+                _user.IDPregunta = x.IDPregunta;
+                _user.Respuesta = x.Respuesta;
+            }
+        }
+
+        public void Limpieza()
+        {
+            Hide();
+            txtMailNick.ResetText();
+            txtPass.ResetText();
+            txtCFPass.ResetText();
+            txtResp.ResetText();
         }
     }
 }

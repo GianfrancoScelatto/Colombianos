@@ -60,7 +60,7 @@ namespace CU
 
         }
 
-        #region Métodos
+        #region Dll Import para mover formularios 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void RealseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

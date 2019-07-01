@@ -27,10 +27,13 @@ namespace CU
 
         }
 
+        #region Dll Import para mover formularios 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void RealseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        #endregion
+
 
         private void BtnAccion_Click(object sender, EventArgs e)
         {
