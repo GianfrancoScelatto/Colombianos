@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
 using LC;
 
 namespace CU
@@ -16,7 +17,8 @@ namespace CU
         public Cliente cliente;
         public Ciudad ciudad;
         public bool bandera;
-        int _dni, id;
+        public DialogResult result;
+        private int _dni, id;
         public FrmAbm(int dni)
         {
             _dni = dni;
@@ -26,7 +28,7 @@ namespace CU
             Combo.Combo2campos(CBOCiudad, "NombreCiudad", "CodigoCiudad", "BaseCiudades");
 
             if (_dni == 0)
-            {
+            {                
 
             }
             else
@@ -52,6 +54,10 @@ namespace CU
                 }
             }
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void RealseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         public bool Validar(string correo)
         {
@@ -75,6 +81,13 @@ namespace CU
 
         private void Limpieza()
         {
+            Documento.ResetText();
+            Nombre.ResetText();
+            rbtnM.Checked = true;
+            Fecha.Value = new DateTime(2001, 12, 31);
+            Correo.ResetText();
+            Address.ResetText();
+            CBOCiudad.SelectedIndex = 0;
             _dni = 0;
             Hide();
         }
@@ -110,20 +123,20 @@ namespace CU
                 cliente.Accion(cliente, "UPDATE");
                 Limpieza();
             }
-            else
+            else if (bandera == false)
             {
                 cliente.Accion(cliente, "ALTA");
-                DialogResult result = MessageBox.Show("¿Desea agregar otro cliente?", "Clientes", MessageBoxButtons.YesNo);
+                result = MessageBox.Show("¿Desea agregar otro cliente?", "Clientes", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {
-                    _dni = 0;
+                {           
+                    Limpieza();
+                    Show();
                 }
                 else if (result == DialogResult.No)
                 {
                     _dni = 0;
                     Hide();
                 }
-
                 bandera = false;
             }
         }
@@ -193,11 +206,25 @@ namespace CU
             }
         }
 
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RealseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
+        }
+
+        private void Label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RealseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0); 
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpieza();
         }
 
-        
+
+       
     }
 }

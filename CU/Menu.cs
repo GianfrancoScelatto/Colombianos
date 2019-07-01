@@ -16,30 +16,53 @@ namespace CU
         public FrmAbm formulario;
         public Cliente cliente;
         public int dni;
+        public Login login;
         public Menu()
         {
+            login = new Login();
             FrmAbm formulario = new FrmAbm(dni);
             cliente = new Cliente();
-
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarGrilla();
+            CargarGrilla();           
         }
 
         public void CargarGrilla()
         {
-            Grilla.Rows.Clear();
-            var cadena = Buscartxt.Text.ToString();
-            var l = cliente.ListarNombre(cadena);
-            foreach (var x in l)
-            {
-                Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("MM-dd-yyyy"), 
-                x.Correo,x.Direccion, x.ciudad.NombreCiudad);
-            }
+            Grilla.Rows.Clear();           
             
+            if (rbtnBuscNombre.Checked == true)
+            {
+                var cadena = Buscartxt.Text.ToString();
+                var l = cliente.ListarNombre(cadena);
+                foreach (var x in l)
+                {
+                    Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("MM-dd-yyyy"),
+                    x.Correo, x.Direccion, x.ciudad.NombreCiudad);
+                }
+            }
+            else if (rbtnBuscDNI.Checked == true)
+            {
+                var cadena = Buscartxt.Text.ToString();
+                var l = cliente.ListarNombre(cadena);
+                
+                if (Buscartxt.Text == "")
+                {
+                    l = cliente.ListarNombre(cadena);
+                }
+                else
+                {
+                    l = cliente.ListarDocumento(Convert.ToInt32(cadena));
+                }
+                foreach (var x in l)
+                {
+                    Grilla.Rows.Add(x.ID, x.Documento, x.Nombre, x.Sexo, x.FechaNacimiento.ToString("MM-dd-yyyy"),
+                    x.Correo, x.Direccion, x.ciudad.NombreCiudad);
+                }
+            }
         }
 
         private void PbMaximizar_Click(object sender, EventArgs e)
@@ -85,15 +108,17 @@ namespace CU
         {
             dni = cliente.Documento;
             FrmAbm formulario = new FrmAbm(dni);
-            formulario.ShowDialog();
             formulario.bandera = true; // activamos la bandera del FrmAbm para indicarle que accion debe realizar con los datos del form
+            formulario.ShowDialog();
+          
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             dni = 0;
             FrmAbm formulario = new FrmAbm(dni);
-            formulario.ShowDialog();
+            formulario.bandera = false;
+            formulario.ShowDialog();           
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -105,6 +130,7 @@ namespace CU
             }
             if (Grilla.CurrentRow == null)
                 return;
+
             Grilla.Rows.Remove(Grilla.CurrentRow);
         }
 
@@ -112,8 +138,41 @@ namespace CU
         {
             dni = Convert.ToInt32(Grilla.Rows[e.RowIndex].Cells[1].Value.ToString());
             FrmAbm formulario = new FrmAbm(dni);
-            formulario.ShowDialog();
             formulario.bandera = true;
+            formulario.ShowDialog();           
+        }
+
+        private void Buscartxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (rbtnBuscNombre.Checked == true)
+            {
+                if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+                {
+                    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+            else if (rbtnBuscDNI.Checked == true)
+            {
+                if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+                {
+                    MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void LkLblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            login.Show();
+        }
+
+        private void Menu_Activated(object sender, EventArgs e)
+        {
+            CargarGrilla();
         }
     }
 }

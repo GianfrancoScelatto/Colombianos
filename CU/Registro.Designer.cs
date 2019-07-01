@@ -64,11 +64,13 @@
             this.panel1.Controls.Add(this.pbCerrar);
             this.panel1.Controls.Add(this.pbMinimizar);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 45);
             this.panel1.TabIndex = 10;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             // 
             // pbCerrar
             // 
@@ -108,6 +110,7 @@
             this.label1.Size = new System.Drawing.Size(265, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "REGISTRO USUARIO";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label1_MouseDown);
             // 
             // panel2
             // 

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.LkLblLogOut = new System.Windows.Forms.LinkLabel();
             this.btnActualizar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,6 +61,9 @@
             this.Buscartxt = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.rbtnBuscDNI = new System.Windows.Forms.RadioButton();
+            this.rbtnBuscNombre = new System.Windows.Forms.RadioButton();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -77,6 +81,7 @@
             // 
             this.Sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Sidebar.BackgroundImage")));
             this.Sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sidebar.Controls.Add(this.LkLblLogOut);
             this.Sidebar.Controls.Add(this.btnActualizar);
             this.Sidebar.Controls.Add(this.bunifuGradientPanel1);
             this.Sidebar.Controls.Add(this.pictureBox1);
@@ -94,6 +99,23 @@
             this.Sidebar.Quality = 10;
             this.Sidebar.Size = new System.Drawing.Size(270, 538);
             this.Sidebar.TabIndex = 7;
+            // 
+            // LkLblLogOut
+            // 
+            this.LkLblLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LkLblLogOut.AutoSize = true;
+            this.LkLblLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.LkLblLogOut.DisabledLinkColor = System.Drawing.Color.DimGray;
+            this.LkLblLogOut.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LkLblLogOut.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.LkLblLogOut.LinkColor = System.Drawing.Color.White;
+            this.LkLblLogOut.Location = new System.Drawing.Point(90, 500);
+            this.LkLblLogOut.Name = "LkLblLogOut";
+            this.LkLblLogOut.Size = new System.Drawing.Size(81, 15);
+            this.LkLblLogOut.TabIndex = 22;
+            this.LkLblLogOut.TabStop = true;
+            this.LkLblLogOut.Text = "Cerrar sesión";
+            this.LkLblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LkLblLogOut_LinkClicked);
             // 
             // btnActualizar
             // 
@@ -146,9 +168,10 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 368);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 322);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 145);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,21 +329,21 @@
             this.Grilla.AllowUserToAddRows = false;
             this.Grilla.AllowUserToDeleteRows = false;
             this.Grilla.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Grilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Grilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.Grilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Grilla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.Grilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.Grilla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -505,6 +528,7 @@
             this.Buscartxt.Size = new System.Drawing.Size(184, 20);
             this.Buscartxt.TabIndex = 21;
             this.Buscartxt.TextChanged += new System.EventHandler(this.Buscar_TextChanged);
+            this.Buscartxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Buscartxt_KeyPress);
             // 
             // lblBuscar
             // 
@@ -520,6 +544,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.lblUser);
+            this.panel1.Controls.Add(this.rbtnBuscDNI);
+            this.panel1.Controls.Add(this.rbtnBuscNombre);
             this.panel1.Controls.Add(this.lblBuscar);
             this.panel1.Controls.Add(this.Buscartxt);
             this.panel1.Controls.Add(this.bunifuGradientPanel2);
@@ -535,6 +562,42 @@
             this.panel1.Size = new System.Drawing.Size(1033, 50);
             this.panel1.TabIndex = 6;
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(223, 17);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 15);
+            this.lblUser.TabIndex = 27;
+            // 
+            // rbtnBuscDNI
+            // 
+            this.rbtnBuscDNI.AutoSize = true;
+            this.rbtnBuscDNI.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnBuscDNI.ForeColor = System.Drawing.Color.White;
+            this.rbtnBuscDNI.Location = new System.Drawing.Point(771, 24);
+            this.rbtnBuscDNI.Name = "rbtnBuscDNI";
+            this.rbtnBuscDNI.Size = new System.Drawing.Size(107, 19);
+            this.rbtnBuscDNI.TabIndex = 26;
+            this.rbtnBuscDNI.Text = "Por documento";
+            this.rbtnBuscDNI.UseVisualStyleBackColor = true;
+            // 
+            // rbtnBuscNombre
+            // 
+            this.rbtnBuscNombre.AutoSize = true;
+            this.rbtnBuscNombre.Checked = true;
+            this.rbtnBuscNombre.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnBuscNombre.ForeColor = System.Drawing.Color.White;
+            this.rbtnBuscNombre.Location = new System.Drawing.Point(771, 5);
+            this.rbtnBuscNombre.Name = "rbtnBuscNombre";
+            this.rbtnBuscNombre.Size = new System.Drawing.Size(87, 19);
+            this.rbtnBuscNombre.TabIndex = 25;
+            this.rbtnBuscNombre.TabStop = true;
+            this.rbtnBuscNombre.Text = "Por nombre";
+            this.rbtnBuscNombre.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,9 +610,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.Text = "Form1";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Menu_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Sidebar.ResumeLayout(false);
+            this.Sidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.bunifuGradientPanel3.ResumeLayout(false);
@@ -595,6 +661,10 @@
         public Bunifu.Framework.UI.BunifuFlatButton btnNuevo;
         public Bunifu.Framework.UI.BunifuFlatButton btnActualizar;
         public Bunifu.Framework.UI.BunifuCustomDataGrid Grilla;
+        private System.Windows.Forms.RadioButton rbtnBuscDNI;
+        private System.Windows.Forms.RadioButton rbtnBuscNombre;
+        public System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.LinkLabel LkLblLogOut;
     }
 }
 

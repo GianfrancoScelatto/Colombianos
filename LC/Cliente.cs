@@ -23,6 +23,7 @@ namespace LC
 
         public Ciudad ciudad;
 
+
         public Cliente()
         {
             ciudad = new Ciudad();
@@ -49,7 +50,6 @@ namespace LC
                 else if (ejecutar == "BAJA")
                 {
                     comando.CommandText = "DELETE BaseClientes WHERE DocumentoCliente=" + _Cliente.Documento;
-                    MessageBox.Show("El cliente ha sido borrado exitosamente");
                 }
                 else if (ejecutar == "UPDATE")
                 {
@@ -152,4 +152,6 @@ namespace LC
         //Metodo que se utiliza para devolver una lista a partir del nombre del cliente 
         #endregion
     }
+
+    
 }

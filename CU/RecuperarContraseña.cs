@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 using LC;
 
 namespace CU
@@ -41,6 +42,11 @@ namespace CU
                 _user.Respuesta = x.Respuesta;
             }
         }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void RealseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         public void Limpieza()
         {
@@ -97,8 +103,22 @@ namespace CU
 
         private void BtnCancelar_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Limpieza();
+        }
+
+        private void Label6_MouseDown(object sender, MouseEventArgs e)
+        {
+            RealseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
+        }
+
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RealseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
 using LC;
 
 namespace CU
@@ -26,6 +27,12 @@ namespace CU
         {
 
         }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void RealseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             if (txtMail.Text == "" || txtNick.Text == "" || txtPass.Text == "" || txtCFPass.Text == "" || txtRespuesta.Text == "")
@@ -138,6 +145,20 @@ namespace CU
                 MessageBox.Show("Correo no válido");
                 txtMail.Focus();
             }
+        }
+
+        private void Label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RealseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
+        }
+
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RealseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
     }
 }

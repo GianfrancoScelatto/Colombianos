@@ -35,6 +35,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnAccion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtCFPass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.a = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -47,8 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAccion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -62,11 +62,13 @@
             this.panel1.Controls.Add(this.pbCerrar);
             this.panel1.Controls.Add(this.pbMinimizar);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 45);
             this.panel1.TabIndex = 13;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             // 
             // pbCerrar
             // 
@@ -99,6 +101,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(12, 9);
@@ -106,6 +109,7 @@
             this.label6.Size = new System.Drawing.Size(352, 32);
             this.label6.TabIndex = 1;
             this.label6.Text = "RECUPERAR CONTRASEÑA";
+            this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label6_MouseDown);
             // 
             // panel2
             // 
@@ -144,6 +148,76 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(491, 355);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderRadius = 0;
+            this.btnCancelar.ButtonText = "Cancelar";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
+            this.btnCancelar.Iconimage_right = null;
+            this.btnCancelar.Iconimage_right_Selected = null;
+            this.btnCancelar.Iconimage_Selected = null;
+            this.btnCancelar.IconMarginLeft = 0;
+            this.btnCancelar.IconMarginRight = 0;
+            this.btnCancelar.IconRightVisible = true;
+            this.btnCancelar.IconRightZoom = 0D;
+            this.btnCancelar.IconVisible = true;
+            this.btnCancelar.IconZoom = 50D;
+            this.btnCancelar.IsTab = false;
+            this.btnCancelar.Location = new System.Drawing.Point(326, 296);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelar.selected = false;
+            this.btnCancelar.Size = new System.Drawing.Size(118, 29);
+            this.btnCancelar.TabIndex = 47;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Textcolor = System.Drawing.Color.White;
+            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
+            // 
+            // btnAccion
+            // 
+            this.btnAccion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAccion.BorderRadius = 0;
+            this.btnAccion.ButtonText = "    Aceptar";
+            this.btnAccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAccion.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAccion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAccion.Iconimage")));
+            this.btnAccion.Iconimage_right = null;
+            this.btnAccion.Iconimage_right_Selected = null;
+            this.btnAccion.Iconimage_Selected = null;
+            this.btnAccion.IconMarginLeft = 0;
+            this.btnAccion.IconMarginRight = 0;
+            this.btnAccion.IconRightVisible = true;
+            this.btnAccion.IconRightZoom = 0D;
+            this.btnAccion.IconVisible = true;
+            this.btnAccion.IconZoom = 50D;
+            this.btnAccion.IsTab = false;
+            this.btnAccion.Location = new System.Drawing.Point(47, 296);
+            this.btnAccion.Name = "btnAccion";
+            this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnAccion.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAccion.selected = false;
+            this.btnAccion.Size = new System.Drawing.Size(118, 29);
+            this.btnAccion.TabIndex = 46;
+            this.btnAccion.Text = "    Aceptar";
+            this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccion.Textcolor = System.Drawing.Color.White;
+            this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccion.Click += new System.EventHandler(this.BtnAccion_Click);
             // 
             // txtCFPass
             // 
@@ -330,76 +404,6 @@
             this.label1.Size = new System.Drawing.Size(105, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "Nick o Email";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.BorderRadius = 0;
-            this.btnCancelar.ButtonText = "Cancelar";
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
-            this.btnCancelar.Iconimage_right = null;
-            this.btnCancelar.Iconimage_right_Selected = null;
-            this.btnCancelar.Iconimage_Selected = null;
-            this.btnCancelar.IconMarginLeft = 0;
-            this.btnCancelar.IconMarginRight = 0;
-            this.btnCancelar.IconRightVisible = true;
-            this.btnCancelar.IconRightZoom = 0D;
-            this.btnCancelar.IconVisible = true;
-            this.btnCancelar.IconZoom = 50D;
-            this.btnCancelar.IsTab = false;
-            this.btnCancelar.Location = new System.Drawing.Point(326, 296);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCancelar.selected = false;
-            this.btnCancelar.Size = new System.Drawing.Size(118, 29);
-            this.btnCancelar.TabIndex = 47;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Textcolor = System.Drawing.Color.White;
-            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
-            // 
-            // btnAccion
-            // 
-            this.btnAccion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAccion.BorderRadius = 0;
-            this.btnAccion.ButtonText = "    Aceptar";
-            this.btnAccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccion.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAccion.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAccion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAccion.Iconimage")));
-            this.btnAccion.Iconimage_right = null;
-            this.btnAccion.Iconimage_right_Selected = null;
-            this.btnAccion.Iconimage_Selected = null;
-            this.btnAccion.IconMarginLeft = 0;
-            this.btnAccion.IconMarginRight = 0;
-            this.btnAccion.IconRightVisible = true;
-            this.btnAccion.IconRightZoom = 0D;
-            this.btnAccion.IconVisible = true;
-            this.btnAccion.IconZoom = 50D;
-            this.btnAccion.IsTab = false;
-            this.btnAccion.Location = new System.Drawing.Point(47, 296);
-            this.btnAccion.Name = "btnAccion";
-            this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnAccion.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnAccion.selected = false;
-            this.btnAccion.Size = new System.Drawing.Size(118, 29);
-            this.btnAccion.TabIndex = 46;
-            this.btnAccion.Text = "    Aceptar";
-            this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccion.Textcolor = System.Drawing.Color.White;
-            this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccion.Click += new System.EventHandler(this.BtnAccion_Click);
             // 
             // RecuperarContraseña
             // 
